@@ -47,11 +47,6 @@ namespace GymManagementSystem
 
         }
 
-        private void DeleteB_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -94,6 +89,22 @@ namespace GymManagementSystem
 
         private void AddressTb_TextChanged(object sender, EventArgs e)
         {
+
+        }
+        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DOBTb_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Trainers_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gymDatabaseDataSet.TrainersTbl' table. You can move, or remove it, as needed.
+            this.trainersTblTableAdapter.Fill(this.gymDatabaseDataSet.TrainersTbl);
 
         }
 
@@ -162,22 +173,6 @@ namespace GymManagementSystem
             }
         }
 
-        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DOBTb_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Trainers_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'gymDatabaseDataSet.TrainersTbl' table. You can move, or remove it, as needed.
-            this.trainersTblTableAdapter.Fill(this.gymDatabaseDataSet.TrainersTbl);
-
-        }
         int Key = 0;
         private void TrainersList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -208,6 +203,51 @@ namespace GymManagementSystem
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Key == 0)
+                {
+                    MessageBox.Show("Select the Trainer to Delete!");
+                }
+                else
+                {
+                    // SQL Query with parameters to delete trainer data from database based on the unique key
+                    string Query = "DELETE FROM TrainersTbl WHERE TId = @TId";
+
+                    // Use the SqlCommand with parameters
+                    using (SqlCommand cmd = new SqlCommand(Query, Con.Connection))
+                    {
+                        // Add parameter with the unique trainer key
+                        cmd.Parameters.AddWithValue("@TId", Key);
+
+                        // Open connection, execute query, and close connection
+                        Con.OpenConnection();
+                        cmd.ExecuteNonQuery(); // Execute the delete command
+                        Con.CloseConnection(); // Close the connection
+
+                        MessageBox.Show("Trainer Deleted!");
+                        ShowTrainer(); // Refresh the data grid view after deleting a trainer
+
+                        // Clear the input fields after deletion
+                        TNameTb.Text = "";
+                        GenderCb.SelectedIndex = -1;
+                        DOBTb.Value = DateTime.Now;
+                        PhoneTb.Text = "";
+                        ExperienceTb.Text = "";
+                        AddressTb.Text = "";
+                        PasswordTb.Text = "";
+                        Key = 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }
