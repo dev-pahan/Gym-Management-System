@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.EditBt = new System.Windows.Forms.Button();
             this.TNameTb = new System.Windows.Forms.TextBox();
             this.PhoneTb = new System.Windows.Forms.TextBox();
             this.ExperienceTb = new System.Windows.Forms.TextBox();
@@ -73,6 +72,7 @@
             this.trainersTblTableAdapter = new GymManagementSystem.GymDatabaseDataSetTableAdapters.TrainersTblTableAdapter();
             this.TrainersList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.DeleteBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -398,19 +398,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Gender";
             // 
-            // EditBt
-            // 
-            this.EditBt.BackColor = System.Drawing.Color.Teal;
-            this.EditBt.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBt.ForeColor = System.Drawing.Color.White;
-            this.EditBt.Location = new System.Drawing.Point(427, 567);
-            this.EditBt.Name = "EditBt";
-            this.EditBt.Size = new System.Drawing.Size(120, 40);
-            this.EditBt.TabIndex = 12;
-            this.EditBt.Text = "Edit";
-            this.EditBt.UseVisualStyleBackColor = false;
-            this.EditBt.Click += new System.EventHandler(this.EditB_Click);
-            // 
             // TNameTb
             // 
             this.TNameTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -514,26 +501,26 @@
             // 
             // TrainersList
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrainersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrainersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TrainersList.ColumnHeadersHeight = 28;
             this.TrainersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrainersList.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrainersList.DefaultCellStyle = dataGridViewCellStyle3;
             this.TrainersList.GridColor = System.Drawing.Color.White;
             this.TrainersList.Location = new System.Drawing.Point(261, 118);
             this.TrainersList.Name = "TrainersList";
@@ -576,12 +563,26 @@
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
+            // EditBtn
+            // 
+            this.EditBtn.BackColor = System.Drawing.Color.Teal;
+            this.EditBtn.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBtn.ForeColor = System.Drawing.Color.White;
+            this.EditBtn.Location = new System.Drawing.Point(427, 567);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(120, 40);
+            this.EditBtn.TabIndex = 49;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
             // Trainers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1085, 650);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.TrainersList);
             this.Controls.Add(this.DOBTb);
@@ -592,7 +593,6 @@
             this.Controls.Add(this.ExperienceTb);
             this.Controls.Add(this.PhoneTb);
             this.Controls.Add(this.TNameTb);
-            this.Controls.Add(this.EditBt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -659,7 +659,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button EditBt;
         private System.Windows.Forms.TextBox TNameTb;
         private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.TextBox ExperienceTb;
@@ -673,5 +672,6 @@
         private GymDatabaseDataSetTableAdapters.TrainersTblTableAdapter trainersTblTableAdapter;
         private Guna.UI2.WinForms.Guna2DataGridView TrainersList;
         private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button EditBtn;
     }
 }

@@ -250,5 +250,73 @@ namespace GymManagementSystem
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validate that a trainer is selected and required fields are not empty
+                if (Key == 0)
+                {
+                    MessageBox.Show("Select the Trainer to Edit!");
+                }
+                else if (TNameTb.Text == "" || PhoneTb.Text == "" || ExperienceTb.Text == "" || PasswordTb.Text == "" || GenderCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Data!");
+                }
+                else
+                {
+                    // Collect updated data from input fields
+                    string Name = TNameTb.Text;
+                    string Gender = GenderCb.Text;
+                    DateTime DOB = DOBTb.Value.Date;
+                    string Phone = PhoneTb.Text;
+                    int Experience = Convert.ToInt32(ExperienceTb.Text);
+                    string Address = AddressTb.Text;
+                    string Password = PasswordTb.Text;
+
+                    // SQL Query with parameters to update trainer data in the database
+                    string Query = "UPDATE TrainersTbl SET TName = @TName, TGender = @Gender, TDOB = @DOB, TPhone = @Phone, " +
+                                   "TExperience = @Experience, TAddress = @Address, TPass = @Password WHERE TId = @TId";
+
+                    // Use the SqlCommand with parameters
+                    using (SqlCommand cmd = new SqlCommand(Query, Con.Connection))
+                    {
+                        // Add parameters with updated values
+                        cmd.Parameters.AddWithValue("@TName", Name);
+                        cmd.Parameters.AddWithValue("@Gender", Gender);
+                        cmd.Parameters.AddWithValue("@DOB", DOB);
+                        cmd.Parameters.AddWithValue("@Phone", Phone);
+                        cmd.Parameters.AddWithValue("@Experience", Experience);
+                        cmd.Parameters.AddWithValue("@Address", Address);
+                        cmd.Parameters.AddWithValue("@Password", Password);
+                        cmd.Parameters.AddWithValue("@TId", Key);
+
+                        // Open connection, execute query, and close connection
+                        Con.OpenConnection();
+                        cmd.ExecuteNonQuery(); // Execute the update command
+                        Con.CloseConnection(); // Close the connection
+
+                        MessageBox.Show("Trainer Updated!");
+                        ShowTrainer(); // Refresh the data grid view after updating the trainer
+
+                        // Clear input fields after update
+                        TNameTb.Text = "";
+                        GenderCb.SelectedIndex = -1;
+                        DOBTb.Value = DateTime.Now;
+                        PhoneTb.Text = "";
+                        ExperienceTb.Text = "";
+                        AddressTb.Text = "";
+                        PasswordTb.Text = "";
+                        Key = 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
     }
 }
