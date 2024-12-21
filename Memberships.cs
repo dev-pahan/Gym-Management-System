@@ -21,5 +21,10 @@ namespace GymManagementSystem
         {
 
         }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

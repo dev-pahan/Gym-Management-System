@@ -32,14 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.NameTb = new System.Windows.Forms.TextBox();
             this.DeleteBt = new System.Windows.Forms.Button();
@@ -61,30 +69,22 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.TrainerTb = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +110,36 @@
             this.panel1.Size = new System.Drawing.Size(196, 650);
             this.panel1.TabIndex = 2;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::GymManagementSystem.Properties.Resources.Billing;
+            this.pictureBox7.Location = new System.Drawing.Point(32, 418);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 2;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::GymManagementSystem.Properties.Resources.Attendance;
+            this.pictureBox6.Location = new System.Drawing.Point(32, 372);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::GymManagementSystem.Properties.Resources.Classes;
+            this.pictureBox5.Location = new System.Drawing.Point(32, 326);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -121,6 +151,16 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "Billing";
             this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::GymManagementSystem.Properties.Resources.Membership;
+            this.pictureBox4.Location = new System.Drawing.Point(32, 280);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
             // label14
             // 
@@ -134,6 +174,16 @@
             this.label14.Text = "Attendance";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GymManagementSystem.Properties.Resources.Members;
+            this.pictureBox3.Location = new System.Drawing.Point(32, 234);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -145,6 +195,16 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Classes";
             this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GymManagementSystem.Properties.Resources.Member;
+            this.pictureBox2.Location = new System.Drawing.Point(32, 188);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // label12
             // 
@@ -179,6 +239,16 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Logout";
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::GymManagementSystem.Properties.Resources.Logout;
+            this.pictureBox8.Location = new System.Drawing.Point(47, 14);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 4;
+            this.pictureBox8.TabStop = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -199,6 +269,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(196, 115);
             this.panel4.TabIndex = 0;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::GymManagementSystem.Properties.Resources.Dumbbellwhite;
+            this.pictureBox9.Location = new System.Drawing.Point(59, 23);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
             // 
             // label10
             // 
@@ -450,16 +530,16 @@
             this.comboBox3.Size = new System.Drawing.Size(170, 31);
             this.comboBox3.TabIndex = 41;
             // 
-            // label7
+            // TrainerTb
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(841, 500);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 28);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Coach";
+            this.TrainerTb.AutoSize = true;
+            this.TrainerTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainerTb.ForeColor = System.Drawing.Color.Teal;
+            this.TrainerTb.Location = new System.Drawing.Point(841, 500);
+            this.TrainerTb.Name = "TrainerTb";
+            this.TrainerTb.Size = new System.Drawing.Size(69, 28);
+            this.TrainerTb.TabIndex = 40;
+            this.TrainerTb.Text = "Trainer";
             // 
             // guna2DataGridView1
             // 
@@ -534,86 +614,6 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Status";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::GymManagementSystem.Properties.Resources.Billing;
-            this.pictureBox7.Location = new System.Drawing.Point(32, 418);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GymManagementSystem.Properties.Resources.Attendance;
-            this.pictureBox6.Location = new System.Drawing.Point(32, 372);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::GymManagementSystem.Properties.Resources.Classes;
-            this.pictureBox5.Location = new System.Drawing.Point(32, 326);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GymManagementSystem.Properties.Resources.Membership;
-            this.pictureBox4.Location = new System.Drawing.Point(32, 280);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GymManagementSystem.Properties.Resources.Members;
-            this.pictureBox3.Location = new System.Drawing.Point(32, 234);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GymManagementSystem.Properties.Resources.Member;
-            this.pictureBox2.Location = new System.Drawing.Point(32, 188);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::GymManagementSystem.Properties.Resources.Logout;
-            this.pictureBox8.Location = new System.Drawing.Point(47, 14);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::GymManagementSystem.Properties.Resources.Dumbbellwhite;
-            this.pictureBox9.Location = new System.Drawing.Point(59, 23);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 1;
-            this.pictureBox9.TabStop = false;
-            // 
             // Members
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,7 +624,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TrainerTb);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -650,18 +650,18 @@
             this.Text = "Members";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,7 +707,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label TrainerTb;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label8;
