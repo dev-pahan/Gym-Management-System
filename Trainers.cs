@@ -172,16 +172,43 @@ namespace GymManagementSystem
 
         }
 
-        private void TrainersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Trainers_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gymDatabaseDataSet.TrainersTbl' table. You can move, or remove it, as needed.
             this.trainersTblTableAdapter.Fill(this.gymDatabaseDataSet.TrainersTbl);
 
+        }
+        int Key = 0;
+        private void TrainersList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Ensure the clicked row is valid
+                if (e.RowIndex >= 0 && TrainersList.Rows[e.RowIndex].Cells.Count > 0)
+                {
+                    DataGridViewRow selectedRow = TrainersList.Rows[e.RowIndex];
+
+                    // Populate input fields with the selected row's values
+                    TNameTb.Text = selectedRow.Cells[1]?.Value?.ToString() ?? string.Empty;
+                    GenderCb.Text = selectedRow.Cells[2]?.Value?.ToString() ?? string.Empty;
+                    DOBTb.Value = DateTime.TryParse(selectedRow.Cells[3]?.Value?.ToString(), out DateTime dob) ? dob : DateTime.Now;
+                    PhoneTb.Text = selectedRow.Cells[4]?.Value?.ToString() ?? string.Empty;
+                    ExperienceTb.Text = selectedRow.Cells[5]?.Value?.ToString() ?? string.Empty;
+                    AddressTb.Text = selectedRow.Cells[6]?.Value?.ToString() ?? string.Empty;
+                    PasswordTb.Text = selectedRow.Cells[7]?.Value?.ToString() ?? string.Empty;
+
+                    // Assign the primary key value
+                    Key = string.IsNullOrWhiteSpace(TNameTb.Text) ? 0 : Convert.ToInt32(selectedRow.Cells[0]?.Value ?? "0");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid selection. Please select a valid row.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
         }
     }
 }
