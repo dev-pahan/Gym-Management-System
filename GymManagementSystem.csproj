@@ -175,6 +175,12 @@
     <Compile Include="Billing.Designer.cs">
       <DependentUpon>Billing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
+    <Compile Include="GymDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GymDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,17 @@
     <EmbeddedResource Include="Trainers.resx">
       <DependentUpon>Trainers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GymDatabaseDataSet.xsc">
+      <DependentUpon>GymDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GymDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GymDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GymDatabaseDataSet.xss">
+      <DependentUpon>GymDatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

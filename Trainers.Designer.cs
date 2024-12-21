@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,17 +59,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.GenderTb = new System.Windows.Forms.ComboBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.EditBt = new System.Windows.Forms.Button();
-            this.SaveBt = new System.Windows.Forms.Button();
             this.DeleteBt = new System.Windows.Forms.Button();
-            this.NameTb = new System.Windows.Forms.TextBox();
+            this.TNameTb = new System.Windows.Forms.TextBox();
             this.PhoneTb = new System.Windows.Forms.TextBox();
             this.ExperienceTb = new System.Windows.Forms.TextBox();
             this.AddressTb = new System.Windows.Forms.TextBox();
             this.PasswordTb = new System.Windows.Forms.TextBox();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.trainersTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gymDatabaseDataSet = new GymManagementSystem.GymDatabaseDataSet();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.GenderCb = new System.Windows.Forms.ComboBox();
+            this.DOBTb = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.trainersTblTableAdapter = new GymManagementSystem.GymDatabaseDataSetTableAdapters.TrainersTblTableAdapter();
+            this.TrainersList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -80,7 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainersTblBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gymDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrainersList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -392,35 +398,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Gender";
             // 
-            // GenderTb
-            // 
-            this.GenderTb.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderTb.FormattingEnabled = true;
-            this.GenderTb.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.GenderTb.Location = new System.Drawing.Point(488, 462);
-            this.GenderTb.Name = "GenderTb";
-            this.GenderTb.Size = new System.Drawing.Size(121, 31);
-            this.GenderTb.TabIndex = 9;
-            this.GenderTb.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.Teal;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(643, 462);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(144, 31);
-            this.guna2DateTimePicker1.TabIndex = 10;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 12, 19, 16, 7, 43, 943);
-            this.guna2DateTimePicker1.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged);
-            // 
             // EditBt
             // 
             this.EditBt.BackColor = System.Drawing.Color.Teal;
@@ -433,19 +410,6 @@
             this.EditBt.Text = "Edit";
             this.EditBt.UseVisualStyleBackColor = false;
             this.EditBt.Click += new System.EventHandler(this.EditB_Click);
-            // 
-            // SaveBt
-            // 
-            this.SaveBt.BackColor = System.Drawing.Color.Teal;
-            this.SaveBt.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBt.ForeColor = System.Drawing.Color.White;
-            this.SaveBt.Location = new System.Drawing.Point(592, 567);
-            this.SaveBt.Name = "SaveBt";
-            this.SaveBt.Size = new System.Drawing.Size(120, 40);
-            this.SaveBt.TabIndex = 12;
-            this.SaveBt.Text = "Save";
-            this.SaveBt.UseVisualStyleBackColor = false;
-            this.SaveBt.Click += new System.EventHandler(this.SaveB_Click);
             // 
             // DeleteBt
             // 
@@ -460,14 +424,14 @@
             this.DeleteBt.UseVisualStyleBackColor = false;
             this.DeleteBt.Click += new System.EventHandler(this.DeleteB_Click);
             // 
-            // NameTb
+            // TNameTb
             // 
-            this.NameTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTb.Location = new System.Drawing.Point(261, 462);
-            this.NameTb.Name = "NameTb";
-            this.NameTb.Size = new System.Drawing.Size(192, 31);
-            this.NameTb.TabIndex = 13;
-            this.NameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
+            this.TNameTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNameTb.Location = new System.Drawing.Point(261, 462);
+            this.TNameTb.Name = "TNameTb";
+            this.TNameTb.Size = new System.Drawing.Size(192, 31);
+            this.TNameTb.TabIndex = 13;
+            this.TNameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
             // 
             // PhoneTb
             // 
@@ -505,55 +469,111 @@
             this.PasswordTb.TabIndex = 17;
             this.PasswordTb.TextChanged += new System.EventHandler(this.PasswordTb_TextChanged);
             // 
-            // guna2DataGridView1
+            // trainersTblBindingSource
+            // 
+            this.trainersTblBindingSource.DataMember = "TrainersTbl";
+            this.trainersTblBindingSource.DataSource = this.gymDatabaseDataSet;
+            // 
+            // gymDatabaseDataSet
+            // 
+            this.gymDatabaseDataSet.DataSetName = "GymDatabaseDataSet";
+            this.gymDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackColor = System.Drawing.Color.Teal;
+            this.SaveBtn.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(593, 567);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(120, 40);
+            this.SaveBtn.TabIndex = 44;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // GenderCb
+            // 
+            this.GenderCb.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderCb.FormattingEnabled = true;
+            this.GenderCb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.GenderCb.Location = new System.Drawing.Point(488, 462);
+            this.GenderCb.Name = "GenderCb";
+            this.GenderCb.Size = new System.Drawing.Size(121, 31);
+            this.GenderCb.TabIndex = 45;
+            this.GenderCb.SelectedIndexChanged += new System.EventHandler(this.GenderCb_SelectedIndexChanged);
+            // 
+            // DOBTb
+            // 
+            this.DOBTb.Checked = true;
+            this.DOBTb.FillColor = System.Drawing.Color.Teal;
+            this.DOBTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.DOBTb.ForeColor = System.Drawing.Color.White;
+            this.DOBTb.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DOBTb.Location = new System.Drawing.Point(644, 462);
+            this.DOBTb.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DOBTb.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DOBTb.Name = "DOBTb";
+            this.DOBTb.Size = new System.Drawing.Size(144, 31);
+            this.DOBTb.TabIndex = 46;
+            this.DOBTb.Value = new System.DateTime(2024, 12, 19, 16, 7, 43, 943);
+            this.DOBTb.ValueChanged += new System.EventHandler(this.DOBTb_ValueChanged);
+            // 
+            // trainersTblTableAdapter
+            // 
+            this.trainersTblTableAdapter.ClearBeforeFill = true;
+            // 
+            // TrainersList
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.TrainersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.TrainersList.ColumnHeadersHeight = 28;
+            this.TrainersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(261, 129);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(755, 307);
-            this.guna2DataGridView1.TabIndex = 43;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Teal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.TrainersList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TrainersList.GridColor = System.Drawing.Color.White;
+            this.TrainersList.Location = new System.Drawing.Point(261, 118);
+            this.TrainersList.Name = "TrainersList";
+            this.TrainersList.RowHeadersVisible = false;
+            this.TrainersList.Size = new System.Drawing.Size(755, 307);
+            this.TrainersList.TabIndex = 47;
+            this.TrainersList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.TrainersList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.TrainersList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.TrainersList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.TrainersList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.TrainersList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.TrainersList.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.TrainersList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TrainersList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.TrainersList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainersList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.TrainersList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.TrainersList.ThemeStyle.HeaderStyle.Height = 28;
+            this.TrainersList.ThemeStyle.ReadOnly = false;
+            this.TrainersList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.TrainersList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.TrainersList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainersList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Teal;
+            this.TrainersList.ThemeStyle.RowsStyle.Height = 22;
+            this.TrainersList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.TrainersList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // Trainers
             // 
@@ -561,17 +581,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1085, 650);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.Controls.Add(this.TrainersList);
+            this.Controls.Add(this.DOBTb);
+            this.Controls.Add(this.GenderCb);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.PasswordTb);
             this.Controls.Add(this.AddressTb);
             this.Controls.Add(this.ExperienceTb);
             this.Controls.Add(this.PhoneTb);
-            this.Controls.Add(this.NameTb);
+            this.Controls.Add(this.TNameTb);
             this.Controls.Add(this.DeleteBt);
-            this.Controls.Add(this.SaveBt);
             this.Controls.Add(this.EditBt);
-            this.Controls.Add(this.guna2DateTimePicker1);
-            this.Controls.Add(this.GenderTb);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -587,6 +607,7 @@
             this.Name = "Trainers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trainers";
+            this.Load += new System.EventHandler(this.Trainers_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -600,7 +621,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainersTblBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gymDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrainersList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,16 +658,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox GenderTb;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private System.Windows.Forms.Button EditBt;
-        private System.Windows.Forms.Button SaveBt;
         private System.Windows.Forms.Button DeleteBt;
-        private System.Windows.Forms.TextBox NameTb;
+        private System.Windows.Forms.TextBox TNameTb;
         private System.Windows.Forms.TextBox PhoneTb;
         private System.Windows.Forms.TextBox ExperienceTb;
         private System.Windows.Forms.TextBox AddressTb;
         private System.Windows.Forms.TextBox PasswordTb;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.ComboBox GenderCb;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DOBTb;
+        private GymDatabaseDataSet gymDatabaseDataSet;
+        private System.Windows.Forms.BindingSource trainersTblBindingSource;
+        private GymDatabaseDataSetTableAdapters.TrainersTblTableAdapter trainersTblTableAdapter;
+        private Guna.UI2.WinForms.Guna2DataGridView TrainersList;
     }
 }

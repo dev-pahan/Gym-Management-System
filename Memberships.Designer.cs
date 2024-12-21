@@ -422,7 +422,7 @@
             this.SaveBt.BackColor = System.Drawing.Color.Teal;
             this.SaveBt.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBt.ForeColor = System.Drawing.Color.White;
-            this.SaveBt.Location = new System.Drawing.Point(592, 510);
+            this.SaveBt.Location = new System.Drawing.Point(593, 510);
             this.SaveBt.Name = "SaveBt";
             this.SaveBt.Size = new System.Drawing.Size(120, 40);
             this.SaveBt.TabIndex = 51;
