@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GymManagementSystem
 {
-    internal class Database
+    internal class Database 
     {
         public SQLiteConnection Connection { get; private set; }
         private SQLiteCommand Command;
@@ -41,26 +41,44 @@ namespace GymManagementSystem
         }
 
         // Method to fetch data
-        public DataTable GetData(string query)
+        public DataTable GetData(string query, SQLiteParameter[] parameters = null)
         {
+            DataTable dt = new DataTable();
+
             try
             {
                 OpenConnection();
-                DataTable dt = new DataTable();
-                Adapter = new SQLiteDataAdapter(query, Connection);
-                Adapter.Fill(dt);
-                CloseConnection();
-                return dt;
+                using (Command = new SQLiteCommand(query, Connection))
+                {
+                    if (parameters != null)
+                    {
+                        Command.Parameters.AddRange(parameters);
+                    }
+
+                    using (Adapter = new SQLiteDataAdapter(Command))
+                    {
+                        Adapter.Fill(dt);
+                    }
+                }
+                
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error fetching data: {ex.Message}");
             }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return dt;
         }
 
         // Method to execute a command
-        public void ExecuteCommand(string query, SQLiteParameter[] parameters = null)
+        public int ExecuteCommand(string query, SQLiteParameter[] parameters = null)
         {
+            int rowsAffected = 0;
+
             try
             {
                 OpenConnection();
@@ -71,13 +89,19 @@ namespace GymManagementSystem
                     Command.Parameters.AddRange(parameters);
                 }
 
-                Command.ExecuteNonQuery();
-                CloseConnection();
+                rowsAffected = Command.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error executing command: {ex.Message}");
             }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return rowsAffected;
         }
     }
 }

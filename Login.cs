@@ -23,27 +23,7 @@ namespace GymManagementSystem
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,9 +33,9 @@ namespace GymManagementSystem
 
         }
 
-        private void UsernameTb_TextChanged(object sender, EventArgs e)
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
-
+            TxtPassword.PasswordChar = '*';
         }
     }
 }
