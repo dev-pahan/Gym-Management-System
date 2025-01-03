@@ -244,6 +244,9 @@
     <EmbeddedResource Include="Trainers.resx">
       <DependentUpon>Trainers.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="database\gms.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
