@@ -43,6 +43,19 @@ namespace GymManagementSystem
                 MessageBox.Show("Please enter both username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Hardcoded default username and password
+            if (username == "admin" && password == "admin")
+            {
+                MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Hide the login form and open the main dashboard
+                this.Hide();
+                Trainers dashboard = new Trainers();
+                dashboard.Show();
+                return;
+            }
+
             try
             {
                 using (SQLiteConnection con = new SQLiteConnection(connectionString))
@@ -52,7 +65,7 @@ namespace GymManagementSystem
                     using (SQLiteCommand cmd = new SQLiteCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
-                        cmd.Parameters.AddWithValue(@"Password", password);
+                        cmd.Parameters.AddWithValue("@Password", password);
 
                         int result = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -60,23 +73,24 @@ namespace GymManagementSystem
                         {
                             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            //Hide the login form and open the main dashboard
+                            // Hide the login form and open the main dashboard
                             this.Hide();
                             Trainers dashboard = new Trainers();
                             dashboard.Show();
                         }
                         else
                         {
-                            MessageBox.Show($"Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
     }
 }
+

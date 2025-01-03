@@ -15,28 +15,6 @@ namespace GymManagementSystem
         [STAThread]
         static void Main()
         {
-            Database db = new Database();
-
-            try
-            {
-                db.InitializeDatabase();
-
-                string insertQuery = "INSERT OR IGNORE INTO UsersTbl (Username, Password) VALUES (@username, @password)";
-                SQLiteParameter[] parameters = new SQLiteParameter[]
-                {
-                    new SQLiteParameter("@username", "testuser"),
-                    new SQLiteParameter(@"password", "password123")
-                };
-
-                db.ExecuteCommand(insertQuery);
-                Console.WriteLine("Test user added to UsersTbl successfully");
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show($"Error initializing database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

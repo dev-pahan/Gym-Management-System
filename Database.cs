@@ -15,33 +15,6 @@ namespace GymManagementSystem
         private SQLiteCommand Command;
         private SQLiteDataAdapter Adapter;
 
-        public void InitializeDatabase()
-        {
-            string createTableQuery = @"
-                CREATE TABLE IF NOT EXISTS UsersTbl (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Username TEXT NOT NULL UNIQUE,
-                    Password TEXT NOT NULL
-                    )";
-
-            try
-            {
-                OpenConnection();
-                using (SQLiteCommand cmd = new SQLiteCommand(createTableQuery, Connection))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error initializing database: {ex.Message}");
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
 
         public Database()
         {
