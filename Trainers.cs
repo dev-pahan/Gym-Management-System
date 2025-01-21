@@ -1,8 +1,6 @@
 ﻿using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
 using System;
-using System.Data;
-using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace GymManagementSystem
@@ -192,6 +190,11 @@ namespace GymManagementSystem
             ExperienceTb.Text = string.Empty;
             AddressTb.Text = string.Empty;
             PasswordTb.Text = string.Empty;
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
