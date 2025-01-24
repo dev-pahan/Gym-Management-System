@@ -158,7 +158,7 @@ namespace GymManagementSystem
                 return;
             }
 
-            _controller.DeleteTrainer(_selectedTrainerId);
+            _controller.DeleteTrainer(_selectedTrainerId);  
             MessageBox.Show("Trainer deleted successfully!");
             LoadTrainers();
             ClearFields();
