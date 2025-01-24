@@ -86,10 +86,8 @@ C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManage
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.pdb
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Members.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.AssemblyReference.cache
-C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Billing.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Login.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Members.resources
-C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Memberships.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Properties.Resources.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Trainers.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.GenerateResource.cache
@@ -273,3 +271,5 @@ C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymMana
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.CopyComplete
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.exe
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.pdb
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\bin\Debug\database\gms.db
+C:\Users\PahanS\Source\Repos\Gym-Management-System\bin\Debug\database\gms.db

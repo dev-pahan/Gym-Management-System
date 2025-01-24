@@ -15,6 +15,7 @@ namespace GymManagementSystem
         private SQLiteCommand Command;
         private SQLiteDataAdapter Adapter;
 
+
         public Database()
         {
             // Use a relative path for the database
