@@ -21,8 +21,8 @@ namespace GymManagementSystem.Controller
 
         public void AddMember(Member member)
         {
-            string query = @"INSERT INTO MembersTbl (MName, MGender, MDOB, MPhone, MAddress, MMembershipStatus, ClassId) 
-                             VALUES (@MName, @Gender, @DOB, @Phone, @Address, @MembershipStatus, @ClassId)";
+            string query = @"INSERT INTO MembersTbl (MName, MGender, MDOB, MPhone, MAddress, MMembershipStatus, MClass) 
+                     VALUES (@MName, @Gender, @DOB, @Phone, @Address, @MembershipStatus, @MClass)";
 
             SQLiteParameter[] parameters = {
                 new SQLiteParameter("@MName", member.Name),
@@ -31,7 +31,7 @@ namespace GymManagementSystem.Controller
                 new SQLiteParameter("@Phone", member.Phone),
                 new SQLiteParameter("@Address", member.Address),
                 new SQLiteParameter("@MembershipStatus", member.MembershipStatus),
-                new SQLiteParameter("@ClassId", member.ClassId)
+                new SQLiteParameter("@MClass", member.MClass)
             };
 
             _database.ExecuteCommand(query, parameters);
@@ -41,7 +41,7 @@ namespace GymManagementSystem.Controller
         {
             string query = @"UPDATE MembersTbl SET 
                              MName = @MName, MGender = @Gender, MDOB = @DOB, MPhone = @Phone, 
-                             MAddress = @Address, MMembershipStatus = @MembershipStatus, ClassId = @ClassId 
+                             MAddress = @Address, MMembershipStatus = @MembershipStatus, MClass = @MClass
                              WHERE MId = @MId";
 
             SQLiteParameter[] parameters = {
@@ -51,7 +51,7 @@ namespace GymManagementSystem.Controller
                 new SQLiteParameter("@Phone", member.Phone),
                 new SQLiteParameter("@Address", member.Address),
                 new SQLiteParameter("@MembershipStatus", member.MembershipStatus),
-                new SQLiteParameter("@ClassId", member.ClassId),
+                new SQLiteParameter("@MClass", member.MClass),
                 new SQLiteParameter("@MId", member.Id)
             };
 
