@@ -7,29 +7,31 @@ namespace GymManagementSystem
 {
     public partial class Members : Form
     {
-        private readonly MemberController _controller;
-        private readonly ClassController _classController;
+        private readonly MemberController _memberController;
+        private readonly ClassController _classController; // Controller for ClassTbl
         private int _selectedMemberId;
 
         public Members()
         {
             InitializeComponent();
-            _controller = new MemberController();
-            _classController = new ClassController();
+            _memberController = new MemberController();
+            _classController = new ClassController(); // Initialize ClassController
             LoadMembers();
-            LoadClasses();
+            LoadClasses(); // Populate MClass combo box
         }
 
         private void LoadMembers()
         {
-            MembersList.DataSource = _controller.GetAllMembers();
+            MembersList.DataSource = _memberController.GetAllMembers();
         }
 
         private void LoadClasses()
         {
-            MClass.DataSource = _classController.GetAllClasses();
-            MClass.DisplayMember = "ClassName";
-            MClass.ValueMember = "ClassId";
+            var classes = _classController.GetAllClasses(); // Retrieve classes from ClassTbl
+            MClass.DataSource = classes;
+            MClass.DisplayMember = "CName"; // Class Name
+            MClass.ValueMember = "CName"; // Value
+            MClass.SelectedIndex = -1; // Ensure no class is selected by default
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -72,6 +74,25 @@ namespace GymManagementSystem
 
         }
 
+        private void SaveBt_Click(object sender, EventArgs e)
+        {
+            var member = new Member
+            {
+                Name = MNameTb.Text,
+                Gender = GenderCb.Text,
+                DateOfBirth = DOBTb.Value.Date,
+                Phone = PhoneTb.Text,
+                Address = MAddressTb.Text,
+                MembershipStatus = MStatus.Text,
+                MClass = MClass.Text // Save selected class
+            };
+
+            _memberController.AddMember(member);
+            MessageBox.Show("Member added successfully!");
+            LoadMembers();
+            ClearFields();
+        }
+
         private void EditBt_Click(object sender, EventArgs e)
         {
             if (_selectedMemberId == 0)
@@ -89,30 +110,11 @@ namespace GymManagementSystem
                 Phone = PhoneTb.Text,
                 Address = MAddressTb.Text,
                 MembershipStatus = MStatus.Text,
-                ClassId = (int)MClass.SelectedValue
+                MClass = MClass.Text // Update selected class
             };
 
-            _controller.UpdateMember(member);
+            _memberController.UpdateMember(member);
             MessageBox.Show("Member updated successfully!");
-            LoadMembers();
-            ClearFields();
-        }
-
-        private void SaveBt_Click(object sender, EventArgs e)
-        {
-            var member = new Member
-            {
-                Name = MNameTb.Text,
-                Gender = GenderCb.Text,
-                DateOfBirth = DOBTb.Value.Date,
-                Phone = PhoneTb.Text,
-                Address = MAddressTb.Text,
-                MembershipStatus = MStatus.Text,
-                ClassId = (int)MClass.SelectedValue
-            };
-
-            _controller.AddMember(member);
-            MessageBox.Show("Member added successfully!");
             LoadMembers();
             ClearFields();
         }
@@ -125,7 +127,7 @@ namespace GymManagementSystem
                 return;
             }
 
-            _controller.DeleteMember(_selectedMemberId);
+            _memberController.DeleteMember(_selectedMemberId);
             MessageBox.Show("Member deleted successfully!");
             LoadMembers();
             ClearFields();
@@ -199,7 +201,7 @@ namespace GymManagementSystem
                 PhoneTb.Text = row.Cells[4].Value.ToString();
                 MAddressTb.Text = row.Cells[5].Value.ToString();
                 MStatus.Text = row.Cells[6].Value.ToString();
-                MClass.SelectedValue = row.Cells[7].Value;
+                MClass.Text = row.Cells[7].Value.ToString(); // Set selected class
             }
         }
     }
