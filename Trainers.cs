@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Trainers : Form
+    public partial class Trainers : Form    
     {
         private readonly TrainerController _trainercontroller;
         private int _selectedTrainerId;
