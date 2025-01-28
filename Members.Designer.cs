@@ -420,9 +420,6 @@
             // 
             this.MClass.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MClass.FormattingEnabled = true;
-            this.MClass.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.MClass.Location = new System.Drawing.Point(452, 528);
             this.MClass.Name = "MClass";
             this.MClass.Size = new System.Drawing.Size(171, 31);
@@ -565,6 +562,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Members";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Members";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

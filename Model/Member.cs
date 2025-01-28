@@ -6,18 +6,18 @@ namespace GymManagementSystem.Model
     {
         public string Phone { get; set; }
         public string Address { get; set; }
-        public string MembershipStatus { get; set; } 
-        public int ClassId { get; set; } 
+        public string MembershipStatus { get; set; }
+        public string MClass { get; set; } // New Property for Member's Class
 
         public Member() { }
 
-        public Member(int id, string name, string gender, DateTime dateOfBirth, string phone, string address, string membershipStatus, int classId)
+        public Member(int id, string name, string gender, DateTime dateOfBirth, string phone, string address, string membershipStatus, string mClass)
             : base(id, name, gender, dateOfBirth)
         {
             Phone = phone;
             Address = address;
             MembershipStatus = membershipStatus;
-            ClassId = classId;
+            MClass = mClass;
         }
     }
 }

@@ -7,19 +7,19 @@ namespace GymManagementSystem
 {
     public partial class Trainers : Form
     {
-        private readonly TrainerController _controller;
+        private readonly TrainerController _trainercontroller;
         private int _selectedTrainerId;
 
         public Trainers()
         {
             InitializeComponent();
-            _controller = new TrainerController();
+            _trainercontroller = new TrainerController();
             LoadTrainers();
         }
 
         private void LoadTrainers()
         {
-            TrainersList.DataSource = _controller.GetAllTrainers();
+            TrainersList.DataSource = _trainercontroller.GetAllTrainers();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace GymManagementSystem
                 Password = PasswordTb.Text
             };
 
-            _controller.AddTrainer(trainer);
+            _trainercontroller.AddTrainer(trainer);
             MessageBox.Show("Trainer added successfully!");
             LoadTrainers();
             ClearFields();
@@ -144,7 +144,7 @@ namespace GymManagementSystem
                 Password = PasswordTb.Text
             };
 
-            _controller.UpdateTrainer(trainer);
+            _trainercontroller.UpdateTrainer(trainer);
             MessageBox.Show("Trainer updated successfully!");
             LoadTrainers();
             ClearFields();
@@ -158,7 +158,9 @@ namespace GymManagementSystem
                 return;
             }
 
-            _controller.DeleteTrainer(_selectedTrainerId);  
+ 
+            _trainercontroller.DeleteTrainer(_selectedTrainerId);
+
             MessageBox.Show("Trainer deleted successfully!");
             LoadTrainers();
             ClearFields();

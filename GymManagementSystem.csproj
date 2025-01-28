@@ -186,6 +186,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes.Designer.cs">
+      <DependentUpon>Classes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\ClassController.cs" />
     <Compile Include="Controller\RegsiterController.cs" />
     <Compile Include="Controller\MemberController.cs" />
@@ -203,6 +209,7 @@
     <Compile Include="Members.Designer.cs">
       <DependentUpon>Members.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Trainer.cs" />
@@ -221,6 +228,9 @@
     <Compile Include="Trainers.Designer.cs">
       <DependentUpon>Trainers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Classes.resx">
+      <DependentUpon>Classes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
