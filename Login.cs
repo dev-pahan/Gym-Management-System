@@ -91,6 +91,12 @@ namespace GymManagementSystem
             }
         }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }
 

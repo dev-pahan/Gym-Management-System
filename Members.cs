@@ -41,6 +41,9 @@ namespace GymManagementSystem
 
         private void label10_Click(object sender, EventArgs e)
         {
+            Trainers trainersForm = new Trainers();
+            trainersForm.Show();
+            this.Hide();
 
         }
 
@@ -140,6 +143,9 @@ namespace GymManagementSystem
 
         private void label13_Click(object sender, EventArgs e)
         {
+            Classes classesForm = new Classes();
+            classesForm.Show();
+            this.Hide();
 
         }
 
@@ -203,6 +209,13 @@ namespace GymManagementSystem
                 MStatus.Text = row.Cells[6].Value.ToString();
                 MClass.Text = row.Cells[7].Value.ToString(); // Set selected class
             }
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
