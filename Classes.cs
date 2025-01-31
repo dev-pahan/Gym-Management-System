@@ -124,16 +124,18 @@ namespace GymManagementSystem
 
         private void label10_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Trainers trainersForm = new Trainers();
             trainersForm.Show();
-            this.Hide();
+            
         }
 
         private void label11_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Members membersForm = new Members();
             membersForm.Show();
-            this.Hide();
+            
         }
 
         private void label13_Click(object sender, EventArgs e)
