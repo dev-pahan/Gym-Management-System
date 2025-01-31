@@ -119,10 +119,19 @@ namespace GymManagementSystem
                 Password = PasswordTb.Text
             };
 
-            _trainercontroller.AddTrainer(trainer);
-            MessageBox.Show("Trainer added successfully!");
-            LoadTrainers();
-            ClearFields();
+            string errorMessage;
+            bool isSuccess = _trainercontroller.AddTrainer(trainer, out errorMessage);
+
+            if (!isSuccess)
+            {
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                MessageBox.Show("Trainer added succesfully!");
+                LoadTrainers();
+                ClearFields();
+            }
         }
         private void EditBtn_Click(object sender, EventArgs e)
         {

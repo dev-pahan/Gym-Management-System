@@ -20,7 +20,7 @@ namespace GymManagementSystem.Model
             {
                 if (!IsValidDOB(value))
                 {
-                    MessageBox.Show("Trainer must be 18 years or above.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Must be 18 years or older.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 _dateOfBirth = value;
             }
