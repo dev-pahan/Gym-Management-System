@@ -35,7 +35,7 @@ namespace GymManagementSystem
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string username = TxtUsername.Text;
+            string username = TxtUsername.Text.Trim();
             string password = TxtPassword.Text;
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -45,7 +45,7 @@ namespace GymManagementSystem
             }
 
             // Hardcoded default username and password
-            if (username == "admin" && password == "admin")
+            /*if (username == "admin" && password == "admin")
             {
                 MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -54,7 +54,7 @@ namespace GymManagementSystem
                 Trainers dashboard = new Trainers();
                 dashboard.Show();
                 return;
-            }
+            }*/
 
             try
             {
@@ -91,6 +91,12 @@ namespace GymManagementSystem
             }
         }
 
+        private void RegisterLbl_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }
 
