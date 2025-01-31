@@ -28,7 +28,7 @@ namespace GymManagementSystem
             var username = UsernameTb.Text.Trim();
             var password = PasswordTb.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+/*            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Username and Password cannot be empty!");
                 return;
@@ -46,7 +46,7 @@ namespace GymManagementSystem
             {
                 MessageBox.Show("Password must be at least 8 characters long!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }*/
 
             //Check if username exists
             if (_controller.DoesUsernameExist(username))
@@ -65,12 +65,18 @@ namespace GymManagementSystem
             try
             {
                 //Register the user
-                _controller.RegisterUser(user);
-
-                MessageBox.Show("Registration successfull!");
-                this.Hide();
-                Login LoginForm = new Login();
-                LoginForm.Show();
+                string errorMessage;
+                if (_controller.RegisterUser(user, out errorMessage))
+                {
+                    MessageBox.Show("Registration successfull!");
+                    this.Hide();
+                    Login LoginForm = new Login();
+                    LoginForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"Registration failed: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             catch (Exception ex)
