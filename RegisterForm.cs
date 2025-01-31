@@ -15,11 +15,11 @@ namespace GymManagementSystem
 {
     public partial class RegisterForm : Form
     {
-        private readonly UserController _controller;
+        private readonly RegisterController _controller;
         public RegisterForm()
         {
             InitializeComponent();
-            _controller = new UserController();
+            _controller = new RegisterController();
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)

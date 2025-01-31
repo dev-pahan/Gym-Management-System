@@ -7,6 +7,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -61,10 +62,34 @@ namespace GymManagementSystem
                 using (SQLiteConnection con = new SQLiteConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username AND Password = @Password";
+                    string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
+                        object storedPassword = cmd.ExecuteScalar();
+
+                        /*if (storedPassword != null)
+                        {
+                            //Compare entered password with the stored hashed password
+                            if (VerifyPassword(password, storedPassword.ToString()))
+                            {
+                                MessageBox.Show("Login Successfill!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                //Hide the login form and open the main dashboard
+                                this.Hide();
+                                Trainers dashboard = new Trainers();
+                                dashboard.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }*/
+
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         int result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -88,6 +113,18 @@ namespace GymManagementSystem
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool VerifyPassword(string enteredPassword, string storedHashedPassword)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] enteredBytes = Encoding.UTF8.GetBytes(enteredPassword);
+                byte[] enteredHash = sha256.ComputeHash(enteredBytes);
+                string enteredHashString = BitConverter.ToString(enteredHash).Replace("-", "").ToLower();
+
+                return enteredHashString == storedHashedPassword;
             }
         }
 
