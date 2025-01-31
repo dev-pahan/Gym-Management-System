@@ -116,18 +116,6 @@ namespace GymManagementSystem
             }
         }
 
-        private bool VerifyPassword(string enteredPassword, string storedHashedPassword)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] enteredBytes = Encoding.UTF8.GetBytes(enteredPassword);
-                byte[] enteredHash = sha256.ComputeHash(enteredBytes);
-                string enteredHashString = BitConverter.ToString(enteredHash).Replace("-", "").ToLower();
-
-                return enteredHashString == storedHashedPassword;
-            }
-        }
-
         private void RegisterLbl_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();

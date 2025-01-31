@@ -196,7 +196,28 @@ namespace GymManagementSystem
 
         private void label13_Click(object sender, EventArgs e)
         {
+            Classes classesForm = new Classes();
+            classesForm.Show();
+            this.Hide();
+        }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Members membersForm = new Members();
+            membersForm.Show();
+            this.Hide();
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
