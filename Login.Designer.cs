@@ -2,15 +2,8 @@
 {
     partial class Login
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -38,7 +31,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.TxtPassword = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
+            this.RegisterLbl = new System.Windows.Forms.Label();
+=======
             this.label10 = new System.Windows.Forms.Label();
+>>>>>>> main
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -149,6 +146,19 @@
             this.TxtPassword.TabIndex = 2;
             this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
+<<<<<<< HEAD
+            // RegisterLbl
+            // 
+            this.RegisterLbl.AutoSize = true;
+            this.RegisterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterLbl.ForeColor = System.Drawing.Color.Teal;
+            this.RegisterLbl.Location = new System.Drawing.Point(388, 503);
+            this.RegisterLbl.Name = "RegisterLbl";
+            this.RegisterLbl.Size = new System.Drawing.Size(175, 25);
+            this.RegisterLbl.TabIndex = 4;
+            this.RegisterLbl.Text = "Create an Account";
+            this.RegisterLbl.Click += new System.EventHandler(this.RegisterLbl_Click);
+=======
             // label10
             // 
             this.label10.AutoSize = true;
@@ -160,6 +170,7 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Create an Account";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+>>>>>>> main
             // 
             // Login
             // 
@@ -167,7 +178,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
+<<<<<<< HEAD
+            this.Controls.Add(this.RegisterLbl);
+=======
             this.Controls.Add(this.label10);
+>>>>>>> main
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
@@ -204,6 +219,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label RegisterLbl;
     }
 }

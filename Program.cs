@@ -9,9 +9,7 @@ namespace GymManagementSystem
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {
@@ -19,6 +17,7 @@ namespace GymManagementSystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new Trainers());
+
 
         }
     }

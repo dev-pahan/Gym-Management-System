@@ -10,16 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymManagementSystem.Model;
+using System.Linq.Expressions;
 
 namespace GymManagementSystem
 {
     public partial class RegisterForm : Form
     {
-        private readonly UserController _controller;
+        private readonly RegisterController _controller;
         public RegisterForm()
         {
             InitializeComponent();
-            _controller = new UserController();
+            _controller = new RegisterController();
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)
@@ -30,6 +31,20 @@ namespace GymManagementSystem
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Username and Password cannot be empty!");
+                return;
+            }
+
+            //Check if username or password contains spaces
+            if (username.Contains(" ") || password.Contains(" "))
+            {
+                MessageBox.Show("Username and Password cannot contain spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Check if password meets minimum length requirement
+            if (password.Length < 8)
+            {
+                MessageBox.Show("Password must be at least 8 characters long!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -47,18 +62,24 @@ namespace GymManagementSystem
                 Password = password
             };
 
-            //Register the user
-            _controller.RegisterUser(user);
+            try
+            {
+                //Register the user
+                _controller.RegisterUser(user);
 
-            MessageBox.Show("Registration successfull!");
-            /*this.Close();*/
+                MessageBox.Show("Registration successfull!");
+                this.Hide();
+                Login LoginForm = new Login();
+                LoginForm.Show();
+            }
 
-            //Hide the register form after successfull registration
-            /*this.Hide();*/
-
-            Login LoginForm = new Login();
-            LoginForm.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured while registering: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
+      
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
