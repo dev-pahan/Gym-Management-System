@@ -24,6 +24,17 @@ namespace GymManagementSystem.Controller
 
         public bool AddTrainer(Trainer trainer, out string errorMessage)
         {
+
+            // Check for empty fields
+            if (string.IsNullOrWhiteSpace(trainer.Name) ||
+                string.IsNullOrWhiteSpace(trainer.Gender) ||
+                string.IsNullOrWhiteSpace(trainer.Phone) ||
+                string.IsNullOrWhiteSpace(trainer.Address))
+            {
+                errorMessage = "All fields are required. Please fill in all details.";
+                return false;
+            }
+
             // Validate phone number
             if (!IsValidPhoneNumber (trainer.Phone))
             {
@@ -46,7 +57,7 @@ namespace GymManagementSystem.Controller
             }
 
             string query = "INSERT INTO TrainersTbl (TName, TGender, TDOB, TPhone, TAddress) " +
-                           "VALUES (@TName, @Gender, @DOB, @Phone, @Experience, @Address)";
+                           "VALUES (@TName, @Gender, @DOB, @Phone, @Address)";
 
             SQLiteParameter[] parameters = {
                 new SQLiteParameter("@TName", trainer.Name),

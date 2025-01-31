@@ -1,4 +1,5 @@
-﻿using GymManagementSystem.Controller;
+﻿using Google.Protobuf.WellKnownTypes;
+using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
 using System;
 using System.Windows.Forms;
@@ -34,7 +35,6 @@ namespace GymManagementSystem
             };
 
             string errorMessage;
-            bool isSuccess = _trainercontroller.AddTrainer(trainer, out errorMessage);
             bool isAdded = _trainercontroller.AddTrainer(trainer, out errorMessage);
 
             if (isAdded)
@@ -48,16 +48,6 @@ namespace GymManagementSystem
                 MessageBox.Show(errorMessage); // Show specific error messge
             }
 
-            if (!isSuccess)
-            {
-                MessageBox.Show(errorMessage);
-            }
-            else
-            {
-                MessageBox.Show("Trainer added succesfully!");
-                LoadTrainers();
-                ClearFields();
-            }
         }
         private void EditBtn_Click(object sender, EventArgs e)
         {
@@ -118,7 +108,7 @@ namespace GymManagementSystem
             _selectedTrainerId = 0;
             TNameTb.Text = string.Empty;
             GenderCb.SelectedIndex = -1;
-            DOBTb.Value = DateTime.Now;
+            DOBTb.Value = new DateTime(2007, 1, 1);
             PhoneTb.Text = string.Empty;
             AddressTb.Text = string.Empty;
         }
