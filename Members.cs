@@ -90,10 +90,22 @@ namespace GymManagementSystem
                 MClass = MClass.Text // Save selected class
             };
 
-            _memberController.AddMember(member);
-            MessageBox.Show("Member added successfully!");
-            LoadMembers();
-            ClearFields();
+            // Variable to hold the error message
+            string errorMessage;
+
+            bool isAdded = _memberController.AddMember(member, out errorMessage);
+
+            if (isAdded)
+            {
+                MessageBox.Show("Member added successfully!");
+                LoadMembers();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show($"Failed to add member: {errorMessage}");
+            }
+            
         }
 
         private void EditBt_Click(object sender, EventArgs e)
@@ -149,46 +161,12 @@ namespace GymManagementSystem
 
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MAddressTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void ClearFields()
         {
             _selectedMemberId = 0;
             MNameTb.Text = string.Empty;
             GenderCb.SelectedIndex = -1;
-            DOBTb.Value = DateTime.Now;
+            DOBTb.Value = new DateTime(2007, 1, 1);
             PhoneTb.Text = string.Empty;
             MAddressTb.Text = string.Empty;
             MStatus.SelectedIndex = -1;
@@ -198,7 +176,7 @@ namespace GymManagementSystem
         private void MembersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
-            {
+            {   
                 var row = MembersList.Rows[e.RowIndex];
                 _selectedMemberId = int.Parse(row.Cells[0].Value.ToString());
                 MNameTb.Text = row.Cells[1].Value.ToString();

@@ -394,12 +394,12 @@
             this.DOBTb.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DOBTb.Location = new System.Drawing.Point(859, 569);
             this.DOBTb.Margin = new System.Windows.Forms.Padding(4);
-            this.DOBTb.MaxDate = new System.DateTime(2007, 12, 31, 0, 0, 0, 0);
+            this.DOBTb.MaxDate = new System.DateTime(2007, 1, 1, 0, 0, 0, 0);
             this.DOBTb.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DOBTb.Name = "DOBTb";
             this.DOBTb.Size = new System.Drawing.Size(192, 38);
             this.DOBTb.TabIndex = 46;
-            this.DOBTb.Value = new System.DateTime(2007, 12, 31, 0, 0, 0, 0);
+            this.DOBTb.Value = new System.DateTime(2007, 1, 1, 0, 0, 0, 0);
             // 
             // TrainersList
             // 
