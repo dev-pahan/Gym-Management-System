@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Classes
+    partial class AttendanceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -45,18 +45,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CTime = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CNameTb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CTrainerName = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.ClassesList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.AttendanceStatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MemberId = new System.Windows.Forms.ComboBox();
+            this.Date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AttendanceList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClassesList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,7 +118,6 @@
             this.label14.Size = new System.Drawing.Size(107, 28);
             this.label14.TabIndex = 2;
             this.label14.Text = "Attendance";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox3
             // 
@@ -227,92 +226,6 @@
             this.label10.Text = "Trainers";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(254, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 37);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Manage Classes";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(594, 76);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 28);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Classes List";
-            // 
-            // CTime
-            // 
-            this.CTime.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTime.FormattingEnabled = true;
-            this.CTime.Items.AddRange(new object[] {
-            "4.00 AM - 9.00 AM",
-            "9.00 AM - 2.00 PM",
-            "2.00 PM - 7.00 PM",
-            "7.00 PM - 12.00 AM"});
-            this.CTime.Location = new System.Drawing.Point(537, 462);
-            this.CTime.Name = "CTime";
-            this.CTime.Size = new System.Drawing.Size(191, 31);
-            this.CTime.TabIndex = 50;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(532, 439);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 28);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Time";
-            // 
-            // CNameTb
-            // 
-            this.CNameTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CNameTb.Location = new System.Drawing.Point(261, 462);
-            this.CNameTb.Name = "CNameTb";
-            this.CNameTb.Size = new System.Drawing.Size(192, 31);
-            this.CNameTb.TabIndex = 52;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(256, 439);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 28);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Class Name";
-            // 
-            // CTrainerName
-            // 
-            this.CTrainerName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTrainerName.FormattingEnabled = true;
-            this.CTrainerName.Location = new System.Drawing.Point(824, 462);
-            this.CTrainerName.Name = "CTrainerName";
-            this.CTrainerName.Size = new System.Drawing.Size(191, 31);
-            this.CTrainerName.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(819, 439);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 28);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Trainer Name";
-            // 
             // EditBtn
             // 
             this.EditBtn.BackColor = System.Drawing.Color.Teal;
@@ -321,7 +234,7 @@
             this.EditBtn.Location = new System.Drawing.Point(427, 567);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(120, 40);
-            this.EditBtn.TabIndex = 57;
+            this.EditBtn.TabIndex = 69;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
             this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
@@ -334,7 +247,7 @@
             this.DeleteBtn.Location = new System.Drawing.Point(758, 567);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(120, 40);
-            this.DeleteBtn.TabIndex = 56;
+            this.DeleteBtn.TabIndex = 68;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
@@ -347,84 +260,180 @@
             this.SaveBtn.Location = new System.Drawing.Point(593, 567);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(120, 40);
-            this.SaveBtn.TabIndex = 55;
+            this.SaveBtn.TabIndex = 67;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // ClassesList
+            // AttendanceStatus
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.ClassesList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClassesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.ClassesList.ColumnHeadersHeight = 28;
-            this.ClassesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClassesList.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ClassesList.GridColor = System.Drawing.Color.White;
-            this.ClassesList.Location = new System.Drawing.Point(261, 118);
-            this.ClassesList.Name = "ClassesList";
-            this.ClassesList.RowHeadersVisible = false;
-            this.ClassesList.Size = new System.Drawing.Size(755, 307);
-            this.ClassesList.TabIndex = 74;
-            this.ClassesList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.ClassesList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.ClassesList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.ClassesList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.ClassesList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.ClassesList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.ClassesList.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.ClassesList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.ClassesList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.ClassesList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClassesList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.ClassesList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.ClassesList.ThemeStyle.HeaderStyle.Height = 28;
-            this.ClassesList.ThemeStyle.ReadOnly = false;
-            this.ClassesList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.ClassesList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ClassesList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClassesList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Teal;
-            this.ClassesList.ThemeStyle.RowsStyle.Height = 22;
-            this.ClassesList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.ClassesList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.AttendanceStatus.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttendanceStatus.FormattingEnabled = true;
+            this.AttendanceStatus.Items.AddRange(new object[] {
+            "Present",
+            "Absent"});
+            this.AttendanceStatus.Location = new System.Drawing.Point(824, 462);
+            this.AttendanceStatus.Name = "AttendanceStatus";
+            this.AttendanceStatus.Size = new System.Drawing.Size(191, 31);
+            this.AttendanceStatus.TabIndex = 66;
             // 
-            // Classes
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(819, 439);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 28);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "Attendance";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(256, 439);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 28);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Member";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Teal;
+            this.label9.Location = new System.Drawing.Point(588, 76);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 28);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "Attendance List";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(254, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 37);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Manage Attendance";
+            // 
+            // MemberId
+            // 
+            this.MemberId.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberId.FormattingEnabled = true;
+            this.MemberId.Items.AddRange(new object[] {
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Night"});
+            this.MemberId.Location = new System.Drawing.Point(261, 462);
+            this.MemberId.Name = "MemberId";
+            this.MemberId.Size = new System.Drawing.Size(191, 31);
+            this.MemberId.TabIndex = 70;
+            // 
+            // Date
+            // 
+            this.Date.Checked = true;
+            this.Date.FillColor = System.Drawing.Color.Teal;
+            this.Date.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Date.ForeColor = System.Drawing.Color.White;
+            this.Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Date.Location = new System.Drawing.Point(536, 462);
+            this.Date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(192, 31);
+            this.Date.TabIndex = 72;
+            this.Date.Value = new System.DateTime(2024, 12, 19, 16, 7, 43, 943);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(531, 439);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 28);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "Date";
+            // 
+            // AttendanceList
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.AttendanceList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AttendanceList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.AttendanceList.ColumnHeadersHeight = 28;
+            this.AttendanceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AttendanceList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.AttendanceList.GridColor = System.Drawing.Color.White;
+            this.AttendanceList.Location = new System.Drawing.Point(261, 118);
+            this.AttendanceList.Name = "AttendanceList";
+            this.AttendanceList.RowHeadersVisible = false;
+            this.AttendanceList.Size = new System.Drawing.Size(755, 307);
+            this.AttendanceList.TabIndex = 73;
+            this.AttendanceList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.AttendanceList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.AttendanceList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.AttendanceList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.AttendanceList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.AttendanceList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.AttendanceList.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.AttendanceList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.AttendanceList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.AttendanceList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttendanceList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.AttendanceList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.AttendanceList.ThemeStyle.HeaderStyle.Height = 28;
+            this.AttendanceList.ThemeStyle.ReadOnly = false;
+            this.AttendanceList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.AttendanceList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.AttendanceList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttendanceList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Teal;
+            this.AttendanceList.ThemeStyle.RowsStyle.Height = 22;
+            this.AttendanceList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.AttendanceList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // AttendanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 650);
-            this.Controls.Add(this.ClassesList);
+            this.Controls.Add(this.AttendanceList);
+            this.Controls.Add(this.Date);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.MemberId);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.CTrainerName);
+            this.Controls.Add(this.AttendanceStatus);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.CNameTb);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CTime);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Classes";
+            this.Name = "AttendanceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Classes";
+            this.Text = "Attendance";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -436,7 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClassesList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttendanceList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,17 +467,17 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox CTime;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox CNameTb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CTrainerName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button SaveBtn;
-        private Guna.UI2.WinForms.Guna2DataGridView ClassesList;
+        private System.Windows.Forms.ComboBox AttendanceStatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox MemberId;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Date;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2DataGridView AttendanceList;
     }
 }

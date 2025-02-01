@@ -204,7 +204,6 @@
             this.label11.Size = new System.Drawing.Size(87, 28);
             this.label11.TabIndex = 2;
             this.label11.Text = "Members";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel4
             // 
@@ -244,7 +243,6 @@
             this.MNameTb.Name = "MNameTb";
             this.MNameTb.Size = new System.Drawing.Size(192, 31);
             this.MNameTb.TabIndex = 29;
-            this.MNameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
             // 
             // DeleteBtn
             // 
@@ -299,7 +297,6 @@
             this.DOBTb.Size = new System.Drawing.Size(144, 31);
             this.DOBTb.TabIndex = 25;
             this.DOBTb.Value = new System.DateTime(2024, 12, 19, 16, 7, 43, 943);
-            this.DOBTb.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged);
             // 
             // GenderCb
             // 
@@ -312,7 +309,6 @@
             this.GenderCb.Name = "GenderCb";
             this.GenderCb.Size = new System.Drawing.Size(121, 31);
             this.GenderCb.TabIndex = 24;
-            this.GenderCb.SelectedIndexChanged += new System.EventHandler(this.GenderTb_SelectedIndexChanged);
             // 
             // PhoneTb
             // 
@@ -321,7 +317,6 @@
             this.PhoneTb.Name = "PhoneTb";
             this.PhoneTb.Size = new System.Drawing.Size(170, 31);
             this.PhoneTb.TabIndex = 21;
-            this.PhoneTb.TextChanged += new System.EventHandler(this.ExperienceTb_TextChanged);
             // 
             // label5
             // 
@@ -377,7 +372,6 @@
             this.label9.Size = new System.Drawing.Size(116, 28);
             this.label9.TabIndex = 31;
             this.label9.Text = "Members List";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label2
             // 
@@ -389,7 +383,6 @@
             this.label2.Size = new System.Drawing.Size(208, 37);
             this.label2.TabIndex = 32;
             this.label2.Text = "Manage Members";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Mjoindate
             // 
@@ -425,7 +418,6 @@
             this.MClass.Name = "MClass";
             this.MClass.Size = new System.Drawing.Size(171, 31);
             this.MClass.TabIndex = 39;
-            this.MClass.SelectedIndexChanged += new System.EventHandler(this.MClass_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -468,7 +460,6 @@
             this.MAddressTb.Name = "MAddressTb";
             this.MAddressTb.Size = new System.Drawing.Size(180, 31);
             this.MAddressTb.TabIndex = 46;
-            this.MAddressTb.TextChanged += new System.EventHandler(this.MAddressTb_TextChanged);
             // 
             // label7
             // 

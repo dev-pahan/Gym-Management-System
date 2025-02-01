@@ -21,91 +21,6 @@ namespace GymManagementSystem
         {
             TrainersList.DataSource = _trainercontroller.GetAllTrainers();
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UsernameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditB_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PhoneTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExperienceTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddressTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DOBTb_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var trainer = new Trainer
@@ -201,11 +116,6 @@ namespace GymManagementSystem
             this.Hide();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label11_Click(object sender, EventArgs e)
         {
             Members membersForm = new Members();
@@ -217,6 +127,13 @@ namespace GymManagementSystem
         {
             Login loginForm = new Login();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
             this.Hide();
         }
     }

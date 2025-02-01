@@ -57,21 +57,6 @@ namespace GymManagementSystem
             ClearFields();
         }
 
-        private void CNameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CTrainerName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var classItem = new Class
@@ -147,6 +132,13 @@ namespace GymManagementSystem
         {
             Login loginForm = new Login();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
             this.Hide();
         }
     }

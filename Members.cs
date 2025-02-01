@@ -34,47 +34,11 @@ namespace GymManagementSystem
             MClass.SelectedIndex = -1; // Ensure no class is selected by default
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label10_Click(object sender, EventArgs e)
         {
             Trainers trainersForm = new Trainers();
             trainersForm.Show();
             this.Hide();
-
-        }
-
-        private void NameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GenderTb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExperienceTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PhoneTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordTb_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveBt_Click(object sender, EventArgs e)
@@ -136,11 +100,6 @@ namespace GymManagementSystem
             ClearFields();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label13_Click(object sender, EventArgs e)
         {
             Classes classesForm = new Classes();
@@ -151,37 +110,9 @@ namespace GymManagementSystem
 
         private void label14_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MAddressTb_TextChanged(object sender, EventArgs e)
-        {
-
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
+            this.Hide();
         }
         private void ClearFields()
         {

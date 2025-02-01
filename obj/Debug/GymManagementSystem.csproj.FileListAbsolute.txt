@@ -325,3 +325,4 @@ C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.Te
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.ValueTuple.xml
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Classes.resources
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.RegisterForm.resources
+C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.AttendanceForm.resources

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -108,7 +108,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox5
             // 
@@ -119,7 +118,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label14
             // 
@@ -131,6 +129,7 @@
             this.label14.Size = new System.Drawing.Size(107, 28);
             this.label14.TabIndex = 2;
             this.label14.Text = "Attendance";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox3
             // 
@@ -141,7 +140,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label13
             // 
@@ -163,8 +161,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel3
             // 
@@ -197,7 +193,6 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 4;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // label11
             // 
@@ -219,7 +214,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(196, 115);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
             // 
@@ -241,7 +235,6 @@
             this.label10.Size = new System.Drawing.Size(76, 28);
             this.label10.TabIndex = 2;
             this.label10.Text = "Trainers";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label2
             // 
@@ -264,7 +257,6 @@
             this.label9.Size = new System.Drawing.Size(105, 28);
             this.label9.TabIndex = 2;
             this.label9.Text = "Trainers List";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label3
             // 
@@ -276,7 +268,6 @@
             this.label3.Size = new System.Drawing.Size(62, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label6
             // 
@@ -332,7 +323,6 @@
             this.label4.Size = new System.Drawing.Size(111, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Date of Birth";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -352,7 +342,6 @@
             this.TNameTb.Name = "TNameTb";
             this.TNameTb.Size = new System.Drawing.Size(192, 31);
             this.TNameTb.TabIndex = 13;
-            this.TNameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
             // 
             // PhoneTb
             // 
@@ -361,7 +350,6 @@
             this.PhoneTb.Name = "PhoneTb";
             this.PhoneTb.Size = new System.Drawing.Size(192, 31);
             this.PhoneTb.TabIndex = 14;
-            this.PhoneTb.TextChanged += new System.EventHandler(this.PhoneTb_TextChanged);
             // 
             // ExperienceTb
             // 
@@ -370,7 +358,6 @@
             this.ExperienceTb.Name = "ExperienceTb";
             this.ExperienceTb.Size = new System.Drawing.Size(192, 31);
             this.ExperienceTb.TabIndex = 15;
-            this.ExperienceTb.TextChanged += new System.EventHandler(this.ExperienceTb_TextChanged);
             // 
             // AddressTb
             // 
@@ -379,7 +366,6 @@
             this.AddressTb.Name = "AddressTb";
             this.AddressTb.Size = new System.Drawing.Size(273, 31);
             this.AddressTb.TabIndex = 16;
-            this.AddressTb.TextChanged += new System.EventHandler(this.AddressTb_TextChanged);
             // 
             // PasswordTb
             // 
@@ -388,7 +374,6 @@
             this.PasswordTb.Name = "PasswordTb";
             this.PasswordTb.Size = new System.Drawing.Size(192, 31);
             this.PasswordTb.TabIndex = 17;
-            this.PasswordTb.TextChanged += new System.EventHandler(this.PasswordTb_TextChanged);
             // 
             // SaveBtn
             // 
@@ -414,7 +399,6 @@
             this.GenderCb.Name = "GenderCb";
             this.GenderCb.Size = new System.Drawing.Size(121, 31);
             this.GenderCb.TabIndex = 45;
-            this.GenderCb.SelectedIndexChanged += new System.EventHandler(this.GenderCb_SelectedIndexChanged);
             // 
             // DOBTb
             // 
@@ -430,30 +414,29 @@
             this.DOBTb.Size = new System.Drawing.Size(144, 31);
             this.DOBTb.TabIndex = 46;
             this.DOBTb.Value = new System.DateTime(2024, 12, 19, 16, 7, 43, 943);
-            this.DOBTb.ValueChanged += new System.EventHandler(this.DOBTb_ValueChanged);
             // 
             // TrainersList
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrainersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrainersList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TrainersList.ColumnHeadersHeight = 28;
             this.TrainersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrainersList.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrainersList.DefaultCellStyle = dataGridViewCellStyle3;
             this.TrainersList.GridColor = System.Drawing.Color.White;
             this.TrainersList.Location = new System.Drawing.Point(261, 118);
             this.TrainersList.Name = "TrainersList";
