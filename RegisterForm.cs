@@ -47,8 +47,8 @@ namespace GymManagementSystem
                 Password = password
             };
 
-                //Register the user
-                _controller.RegisterUser(user);
+            //Register the user
+            _controller.RegisterUser(user);
 
             MessageBox.Show("Registration successfull!");
             /*this.Close();*/
@@ -66,3 +66,4 @@ namespace GymManagementSystem
         }
     }
 }
+      
