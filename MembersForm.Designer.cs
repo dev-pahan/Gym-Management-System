@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Members
+    partial class MembersForm
     {
         /// <summary>
         /// Required designer variable.

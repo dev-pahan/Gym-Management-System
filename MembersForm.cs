@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Members : Form
+    public partial class MembersForm : Form
     {
         private readonly MemberController _memberController;
         private readonly ClassController _classController; // Controller for ClassTbl
         private int _selectedMemberId;
 
-        public Members()
+        public MembersForm()
         {
             InitializeComponent();
             _memberController = new MemberController();
@@ -36,7 +36,7 @@ namespace GymManagementSystem
 
         private void label10_Click(object sender, EventArgs e)
         {
-            Trainers trainersForm = new Trainers();
+            TrainersForm trainersForm = new TrainersForm();
             trainersForm.Show();
             this.Hide();
         }
@@ -102,7 +102,7 @@ namespace GymManagementSystem
 
         private void label13_Click(object sender, EventArgs e)
         {
-            Classes classesForm = new Classes();
+            ClassesForm classesForm = new ClassesForm();
             classesForm.Show();
             this.Hide();
 
@@ -144,7 +144,7 @@ namespace GymManagementSystem
 
         private void label16_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
         }

@@ -56,7 +56,7 @@ namespace GymManagementSystem
             //Hide the register form after successfull registration
             /*this.Hide();*/
 
-            Login LoginForm = new Login();
+            LoginForm LoginForm = new LoginForm();
             LoginForm.Show();
         }
 
