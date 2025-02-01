@@ -164,7 +164,10 @@
             this.pictureBox2.Size = new System.Drawing.Size(33, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
+<<<<<<< HEAD:Trainers.Designer.cs
             this.pictureBox2.TabStop = false;
+=======
+>>>>>>> main:TrainersForm.Designer.cs
             // 
             // panel3
             // 
@@ -282,6 +285,7 @@
             this.label3.Size = new System.Drawing.Size(68, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name";
+
             // 
             // label7
             // 
@@ -348,6 +352,7 @@
             this.PhoneTb.Name = "PhoneTb";
             this.PhoneTb.Size = new System.Drawing.Size(255, 30);
             this.PhoneTb.TabIndex = 14;
+
             // 
             // AddressTb
             // 
@@ -357,6 +362,7 @@
             this.AddressTb.Name = "AddressTb";
             this.AddressTb.Size = new System.Drawing.Size(562, 30);
             this.AddressTb.TabIndex = 16;
+
             // 
             // SaveBtn
             // 
@@ -407,7 +413,7 @@
             this.TrainersList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -417,7 +423,7 @@
             this.TrainersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
