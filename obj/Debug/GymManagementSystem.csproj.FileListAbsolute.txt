@@ -257,10 +257,7 @@ C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\bin\Debug\System.
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\bin\Debug\System.ValueTuple.xml
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.AssemblyReference.cache
-C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.Login.resources
-C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.Members.resources
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.Properties.Resources.resources
-C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.Trainers.resources
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.GenerateResource.cache
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.CopyComplete
@@ -269,7 +266,6 @@ C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymMana
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\bin\Debug\database\gms.db
 C:\Users\PahanS\Source\Repos\Gym-Management-System\bin\Debug\database\gms.db
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Classes.resources
-C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.Classes.resources
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.RegisterForm.resources
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\database\gms.db
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\Azure.Core.dll
@@ -326,3 +322,8 @@ C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManage
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.LoginForm.resources
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.MembersForm.resources
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.TrainersForm.resources
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.AttendanceForm.resources
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.ClassesForm.resources
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.LoginForm.resources
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.MembersForm.resources
+C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.TrainersForm.resources

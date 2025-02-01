@@ -145,13 +145,13 @@ namespace GymManagementSystem
             {   
                 var row = MembersList.Rows[e.RowIndex];
                 _selectedMemberId = int.Parse(row.Cells[0].Value.ToString());
-                MNameTb.Text = row.Cells[1].Value.ToString();
-                GenderCb.Text = row.Cells[2].Value.ToString();
+                MNameTb.Text = row.Cells[1].Value?.ToString() ?? string.Empty;
+                GenderCb.Text = row.Cells[2].Value?.ToString() ?? string.Empty;
                 DOBTb.Value = DateTime.Parse(row.Cells[3].Value.ToString());
-                PhoneTb.Text = row.Cells[4].Value.ToString();
-                MAddressTb.Text = row.Cells[5].Value.ToString();
-                MStatus.Text = row.Cells[6].Value.ToString();
-                MClass.Text = row.Cells[7].Value.ToString(); // Set selected class
+                PhoneTb.Text = row.Cells[4].Value?.ToString() ?? string.Empty;
+                MAddressTb.Text = row.Cells[5].Value?.ToString() ?? string.Empty;
+                MStatus.Text = row.Cells[6].Value?.ToString() ?? string.Empty;
+                MClass.Text = row.Cells[7].Value?.ToString() ?? string.Empty; // Set selected class
             }
         }
 

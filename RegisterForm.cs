@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymManagementSystem.Model;
+using System.Web.UI.WebControls;
 
 namespace GymManagementSystem
 {
@@ -42,7 +43,6 @@ namespace GymManagementSystem
                 return;
             }
 
-            var password = PasswordTb.Text.Trim();
             //Create a new user object
             var user = new User
             {
@@ -58,19 +58,20 @@ namespace GymManagementSystem
                 if (_controller.RegisterUser(user, out errorMessage))
                 {
                     MessageBox.Show("Registration successfull!");
-                    this.Hide();
-                    Login LoginForm = new Login();
-                    LoginForm.Show();
+                    this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
                 }
                 else
                 {
                     MessageBox.Show($"Registration failed: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-
-            LoginForm LoginForm = new LoginForm();
-            LoginForm.Show();
         }
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)

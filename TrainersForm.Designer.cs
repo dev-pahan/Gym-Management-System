@@ -164,10 +164,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(33, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
-<<<<<<< HEAD:Trainers.Designer.cs
             this.pictureBox2.TabStop = false;
-=======
->>>>>>> main:TrainersForm.Designer.cs
             // 
             // panel3
             // 
