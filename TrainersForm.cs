@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Trainers : Form    
+    public partial class TrainersForm : Form    
     {
         private readonly TrainerController _trainercontroller;
         private int _selectedTrainerId;
 
-        public Trainers()
+        public TrainersForm()
         {
             InitializeComponent();
             _trainercontroller = new TrainerController();
@@ -111,21 +111,21 @@ namespace GymManagementSystem
 
         private void label13_Click(object sender, EventArgs e)
         {
-            Classes classesForm = new Classes();
+            ClassesForm classesForm = new ClassesForm();
             classesForm.Show();
             this.Hide();
         }
 
         private void label11_Click(object sender, EventArgs e)
         {
-            Members membersForm = new Members();
+            MembersForm membersForm = new MembersForm();
             membersForm.Show();
             this.Hide();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
         }
