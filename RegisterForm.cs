@@ -25,6 +25,7 @@ namespace GymManagementSystem
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
             var username = UsernameTb.Text.Trim();
+
             var password = PasswordTb.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -33,6 +34,7 @@ namespace GymManagementSystem
                 return;
             }
 
+
             //Check if username exists
             if (_controller.DoesUsernameExist(username))
             {
@@ -40,6 +42,7 @@ namespace GymManagementSystem
                 return;
             }
 
+            var password = PasswordTb.Text.Trim();
             //Create a new user object
             var user = new User
             {
@@ -47,14 +50,24 @@ namespace GymManagementSystem
                 Password = password
             };
 
-            //Register the user
-            _controller.RegisterUser(user);
 
-            MessageBox.Show("Registration successfull!");
-            /*this.Close();*/
+            try
+            {
+                //Register the user
+                string errorMessage;
+                if (_controller.RegisterUser(user, out errorMessage))
+                {
+                    MessageBox.Show("Registration successfull!");
+                    this.Hide();
+                    Login LoginForm = new Login();
+                    LoginForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"Registration failed: {errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
-            //Hide the register form after successfull registration
-            /*this.Hide();*/
 
             LoginForm LoginForm = new LoginForm();
             LoginForm.Show();

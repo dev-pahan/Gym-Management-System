@@ -1,4 +1,5 @@
-﻿using GymManagementSystem.Controller;
+﻿using Google.Protobuf.WellKnownTypes;
+using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
 using System;
 using System.Windows.Forms;
@@ -21,6 +22,175 @@ namespace GymManagementSystem
         {
             TrainersList.DataSource = _trainercontroller.GetAllTrainers();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExperienceTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DOBTb_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExperienceTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DOBTb_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var trainer = new Trainer
@@ -29,15 +199,23 @@ namespace GymManagementSystem
                 Gender = GenderCb.Text,
                 DateOfBirth = DOBTb.Value.Date,
                 Phone = PhoneTb.Text,
-                Experience = int.Parse(ExperienceTb.Text),
                 Address = AddressTb.Text,
-                Password = PasswordTb.Text
             };
 
-            _trainercontroller.AddTrainer(trainer);
-            MessageBox.Show("Trainer added successfully!");
-            LoadTrainers();
-            ClearFields();
+            string errorMessage;
+            bool isAdded = _trainercontroller.AddTrainer(trainer, out errorMessage);
+
+            if (isAdded)
+            {
+                MessageBox.Show("Trainer added succesfully!");
+                LoadTrainers();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show(errorMessage); // Show specific error messge
+            }
+
         }
         private void EditBtn_Click(object sender, EventArgs e)
         {
@@ -54,9 +232,7 @@ namespace GymManagementSystem
                 Gender = GenderCb.Text,
                 DateOfBirth = DOBTb.Value.Date,
                 Phone = PhoneTb.Text,
-                Experience = int.Parse(ExperienceTb.Text),
                 Address = AddressTb.Text,
-                Password = PasswordTb.Text
             };
 
             _trainercontroller.UpdateTrainer(trainer);
@@ -91,9 +267,7 @@ namespace GymManagementSystem
                 GenderCb.Text = row.Cells[2].Value.ToString();
                 DOBTb.Value = DateTime.Parse(row.Cells[3].Value.ToString());
                 PhoneTb.Text = row.Cells[4].Value.ToString();
-                ExperienceTb.Text = row.Cells[5].Value.ToString();
                 AddressTb.Text = row.Cells[6].Value.ToString();
-                PasswordTb.Text = row.Cells[7].Value.ToString();
             }
         }
 
@@ -102,11 +276,9 @@ namespace GymManagementSystem
             _selectedTrainerId = 0;
             TNameTb.Text = string.Empty;
             GenderCb.SelectedIndex = -1;
-            DOBTb.Value = DateTime.Now;
+            DOBTb.Value = new DateTime(2007, 1, 1);
             PhoneTb.Text = string.Empty;
-            ExperienceTb.Text = string.Empty;
             AddressTb.Text = string.Empty;
-            PasswordTb.Text = string.Empty;
         }
 
         private void label13_Click(object sender, EventArgs e)

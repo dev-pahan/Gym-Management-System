@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GymManagementSystem.Model
 {
@@ -11,7 +12,19 @@ namespace GymManagementSystem.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        private DateTime _dateOfBirth { get; set; }
+        public DateTime DateOfBirth
+        {
+            get => _dateOfBirth;
+            set
+            {
+                if (!IsValidDOB(value))
+                {
+                    MessageBox.Show("Must be 18 years or older.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                _dateOfBirth = value;
+            }
+        }
 
         public Person() { }
 
@@ -21,6 +34,13 @@ namespace GymManagementSystem.Model
             Name = name;
             Gender = gender;
             DateOfBirth = dateOfBirth;
+        }
+
+        //Method to validate DOB
+        private bool IsValidDOB(DateTime dob)
+        {
+            DateTime minAllowedDOB = new DateTime(2007, 1, 1);
+            return dob < minAllowedDOB;
         }
     }
 }
