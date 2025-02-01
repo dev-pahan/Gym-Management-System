@@ -76,12 +76,15 @@ C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\bin\Debug\System.Nu
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.AssemblyReference.cache
+C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Login.resources
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Properties.Resources.resources
+C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Trainers.resources
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.GenerateResource.cache
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManag.A6E153F4.Up2Date
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.exe
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.pdb
+C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Members.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.csproj.AssemblyReference.cache
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Login.resources
 C:\Users\PahanS\Source\Repos\Gym-Management-System\obj\Debug\GymManagementSystem.Members.resources
@@ -320,9 +323,6 @@ C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.Se
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.Text.Json.xml
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\bin\Debug\System.ValueTuple.xml
+C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.Classes.resources
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.RegisterForm.resources
 C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.AttendanceForm.resources
-C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.ClassesForm.resources
-C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.LoginForm.resources
-C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.MembersForm.resources
-C:\Users\PahanS\Source\Repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.TrainersForm.resources

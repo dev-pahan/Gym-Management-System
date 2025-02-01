@@ -1,17 +1,25 @@
-﻿using System;
+﻿using System.Data.SQLite;
+using GymManagementSystem.Controller;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymManagementSystem.Model;
-using GymManagementSystem.Controller;
 
 namespace GymManagementSystem
 {
     public partial class RegisterForm : Form
     {
-        private readonly RegisterController _controller;
+        private readonly UserController _controller;
         public RegisterForm()
         {
             InitializeComponent();
-            _controller = new RegisterController();
+            _controller = new UserController();
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)
@@ -48,7 +56,7 @@ namespace GymManagementSystem
             //Hide the register form after successfull registration
             /*this.Hide();*/
 
-            LoginForm LoginForm = new LoginForm();
+            Login LoginForm = new Login();
             LoginForm.Show();
         }
 

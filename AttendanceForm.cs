@@ -34,28 +34,28 @@ namespace GymManagementSystem
 
         private void label10_Click(object sender, EventArgs e)
         {
-            TrainersForm trainersForm = new TrainersForm();
+            Trainers trainersForm = new Trainers();
             trainersForm.Show();
             this.Hide();
         }
 
         private void label11_Click(object sender, EventArgs e)
         {
-            MembersForm membersForm = new MembersForm();
+            Members membersForm = new Members();
             membersForm.Show();
             this.Hide();
         }
 
         private void label13_Click(object sender, EventArgs e)
         {
-            ClassesForm classForm = new ClassesForm();
+            Classes classForm = new Classes();
             classForm.Show();
             this.Hide();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
+            Login loginForm = new Login();
             loginForm.Show();
             this.Hide();
         }

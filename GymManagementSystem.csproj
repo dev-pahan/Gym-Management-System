@@ -192,29 +192,29 @@
     <Compile Include="AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassesForm.cs">
+    <Compile Include="Classes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClassesForm.Designer.cs">
-      <DependentUpon>ClassesForm.cs</DependentUpon>
+    <Compile Include="Classes.Designer.cs">
+      <DependentUpon>Classes.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\AttendanceController.cs" />
     <Compile Include="Controller\ClassController.cs" />
-    <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Controller\RegsiterController.cs" />
     <Compile Include="Controller\MemberController.cs" />
     <Compile Include="Controller\TrainerController.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MembersForm.cs">
+    <Compile Include="Members.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembersForm.Designer.cs">
-      <DependentUpon>MembersForm.cs</DependentUpon>
+    <Compile Include="Members.Designer.cs">
+      <DependentUpon>Members.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Attendance.cs" />
     <Compile Include="Model\Class.cs" />
@@ -230,23 +230,23 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrainersForm.cs">
+    <Compile Include="Trainers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrainersForm.Designer.cs">
-      <DependentUpon>TrainersForm.cs</DependentUpon>
+    <Compile Include="Trainers.Designer.cs">
+      <DependentUpon>Trainers.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClassesForm.resx">
-      <DependentUpon>ClassesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Classes.resx">
+      <DependentUpon>Classes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembersForm.resx">
-      <DependentUpon>MembersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Members.resx">
+      <DependentUpon>Members.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,8 +261,8 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrainersForm.resx">
-      <DependentUpon>TrainersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Trainers.resx">
+      <DependentUpon>Trainers.cs</DependentUpon>
     </EmbeddedResource>
     <Content Include="database\gms.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
