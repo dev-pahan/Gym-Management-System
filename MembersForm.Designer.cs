@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Members
+    partial class MembersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -214,7 +214,6 @@
             this.label11.Size = new System.Drawing.Size(94, 25);
             this.label11.TabIndex = 2;
             this.label11.Text = "Members";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel4
             // 
@@ -258,7 +257,6 @@
             this.MNameTb.Name = "MNameTb";
             this.MNameTb.Size = new System.Drawing.Size(255, 30);
             this.MNameTb.TabIndex = 29;
-            this.MNameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
             // 
             // DeleteBtn
             // 
@@ -331,7 +329,6 @@
             this.GenderCb.Name = "GenderCb";
             this.GenderCb.Size = new System.Drawing.Size(160, 28);
             this.GenderCb.TabIndex = 24;
-            this.GenderCb.SelectedIndexChanged += new System.EventHandler(this.GenderTb_SelectedIndexChanged);
             // 
             // PhoneTb
             // 
@@ -341,7 +338,6 @@
             this.PhoneTb.Name = "PhoneTb";
             this.PhoneTb.Size = new System.Drawing.Size(225, 30);
             this.PhoneTb.TabIndex = 21;
-            this.PhoneTb.TextChanged += new System.EventHandler(this.ExperienceTb_TextChanged);
             // 
             // label5
             // 

@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymManagementSystem.Model;
-using System.Linq.Expressions;
 
 namespace GymManagementSystem
 {
@@ -27,6 +26,15 @@ namespace GymManagementSystem
         {
             var username = UsernameTb.Text.Trim();
 
+            var password = PasswordTb.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Username and Password cannot be empty!");
+                return;
+            }
+
+
             //Check if username exists
             if (_controller.DoesUsernameExist(username))
             {
@@ -41,6 +49,7 @@ namespace GymManagementSystem
                 Username = username,
                 Password = password
             };
+
 
             try
             {
@@ -59,13 +68,10 @@ namespace GymManagementSystem
                 }
             }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occured while registering: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+
+            LoginForm LoginForm = new LoginForm();
+            LoginForm.Show();
         }
-      
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -73,3 +79,4 @@ namespace GymManagementSystem
         }
     }
 }
+      

@@ -1,8 +1,10 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Login
+    partial class LoginForm
     {
+
         private System.ComponentModel.IContainer components = null;
+
 
         protected override void Dispose(bool disposing)
         {
@@ -32,7 +34,6 @@
             this.LoginBtn = new System.Windows.Forms.Button();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.RegisterLbl = new System.Windows.Forms.Label();
-
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -143,6 +144,17 @@
             this.TxtPassword.TabIndex = 2;
             this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
+            // RegisterLbl
+            // 
+            this.RegisterLbl.AutoSize = true;
+            this.RegisterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterLbl.ForeColor = System.Drawing.Color.Teal;
+            this.RegisterLbl.Location = new System.Drawing.Point(388, 503);
+            this.RegisterLbl.Name = "RegisterLbl";
+            this.RegisterLbl.Size = new System.Drawing.Size(175, 25);
+            this.RegisterLbl.TabIndex = 4;
+            this.RegisterLbl.Text = "Create an Account";
+            this.RegisterLbl.Click += new System.EventHandler(this.RegisterLbl_Click);
 
             // 
             // Login
@@ -151,9 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
-
             this.Controls.Add(this.RegisterLbl);
-
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
@@ -166,7 +176,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
@@ -190,6 +200,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.Label RegisterLbl;
+        private System.Windows.Forms.Label label10;
     }
 }

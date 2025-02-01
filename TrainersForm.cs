@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Trainers : Form    
+    public partial class TrainersForm : Form    
     {
         private readonly TrainerController _trainercontroller;
         private int _selectedTrainerId;
 
-        public Trainers()
+        public TrainersForm()
         {
             InitializeComponent();
             _trainercontroller = new TrainerController();
@@ -21,6 +21,174 @@ namespace GymManagementSystem
         private void LoadTrainers()
         {
             TrainersList.DataSource = _trainercontroller.GetAllTrainers();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExperienceTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DOBTb_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsernameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExperienceTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void GenderCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DOBTb_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -115,27 +283,29 @@ namespace GymManagementSystem
 
         private void label13_Click(object sender, EventArgs e)
         {
-            Classes classesForm = new Classes();
+            ClassesForm classesForm = new ClassesForm();
             classesForm.Show();
             this.Hide();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label11_Click(object sender, EventArgs e)
         {
-            Members membersForm = new Members();
+            MembersForm membersForm = new MembersForm();
             membersForm.Show();
             this.Hide();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
             this.Hide();
         }
     }

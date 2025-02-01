@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         //Connection string to SQLite Database
 
@@ -22,7 +22,7 @@ namespace GymManagementSystem
         private string connectionString;
         private Database Con;
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
             connectionString = $"Data Source={dbPath};Version=3;";
@@ -100,7 +100,7 @@ namespace GymManagementSystem
 
                             // Hide the login form and open the main dashboard
                             this.Hide();
-                            Trainers dashboard = new Trainers();
+                            TrainersForm dashboard = new TrainersForm();
                             dashboard.Show();
                         }
                         else
@@ -116,7 +116,7 @@ namespace GymManagementSystem
             }
         }
 
-        private void RegisterLbl_Click(object sender, EventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();

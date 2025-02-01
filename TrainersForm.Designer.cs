@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem
 {
-    partial class Trainers
+    partial class TrainersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -129,6 +129,7 @@
             this.label14.Size = new System.Drawing.Size(112, 25);
             this.label14.TabIndex = 2;
             this.label14.Text = "Attendance";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox3
             // 
@@ -245,7 +246,6 @@
             this.label10.Size = new System.Drawing.Size(84, 25);
             this.label10.TabIndex = 2;
             this.label10.Text = "Trainers";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label2
             // 

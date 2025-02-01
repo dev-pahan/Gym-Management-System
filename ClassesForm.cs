@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class Classes : Form
+    public partial class ClassesForm : Form
     {
         private readonly ClassController _classController;
         private readonly TrainerController _trainerController;
         private int _selectedClassId;
 
-        public Classes()
+        public ClassesForm()
         {
             InitializeComponent();
             _classController = new ClassController();
@@ -55,21 +55,6 @@ namespace GymManagementSystem
             MessageBox.Show("Class updated successfully!");
             LoadClasses();
             ClearFields();
-        }
-
-        private void CNameTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CTrainerName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -125,30 +110,36 @@ namespace GymManagementSystem
         private void label10_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Trainers trainersForm = new Trainers();
+            TrainersForm trainersForm = new TrainersForm();
             trainersForm.Show();
-            
         }
 
         private void label11_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Members membersForm = new Members();
+            MembersForm membersForm = new MembersForm();
             membersForm.Show();
             
         }
 
         private void label13_Click(object sender, EventArgs e)
         {
-            Classes classForm = new Classes();
+            ClassesForm classForm = new ClassesForm();
             classForm.Show();
             this.Hide();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
             this.Hide();
         }
     }
