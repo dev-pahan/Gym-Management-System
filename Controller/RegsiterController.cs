@@ -9,11 +9,11 @@ using GymManagementSystem.Model;
 
 namespace GymManagementSystem.Controller
 {
-    public class UserController
+    public class RegisterController
     {
         private readonly Database _database;
 
-        public UserController()
+        public RegisterController()
         {
             _database = new Database();
         }

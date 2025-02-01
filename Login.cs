@@ -7,6 +7,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,7 +36,7 @@ namespace GymManagementSystem
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string username = TxtUsername.Text;
+            string username = TxtUsername.Text.Trim();
             string password = TxtPassword.Text;
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -45,7 +46,7 @@ namespace GymManagementSystem
             }
 
             // Hardcoded default username and password
-            if (username == "admin" && password == "admin")
+            /*if (username == "admin" && password == "admin")
             {
                 MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -54,17 +55,41 @@ namespace GymManagementSystem
                 Trainers dashboard = new Trainers();
                 dashboard.Show();
                 return;
-            }
+            }*/
 
             try
             {
                 using (SQLiteConnection con = new SQLiteConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username AND Password = @Password";
+                    string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
+                        object storedPassword = cmd.ExecuteScalar();
+
+                        /*if (storedPassword != null)
+                        {
+                            //Compare entered password with the stored hashed password
+                            if (VerifyPassword(password, storedPassword.ToString()))
+                            {
+                                MessageBox.Show("Login Successfill!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                //Hide the login form and open the main dashboard
+                                this.Hide();
+                                Trainers dashboard = new Trainers();
+                                dashboard.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }*/
+
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         int result = Convert.ToInt32(cmd.ExecuteScalar());
@@ -91,7 +116,7 @@ namespace GymManagementSystem
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void RegisterLbl_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
