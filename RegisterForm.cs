@@ -77,6 +77,26 @@ namespace GymManagementSystem
         {
             TxtPassword.PasswordChar = '*';
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTb_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
       
