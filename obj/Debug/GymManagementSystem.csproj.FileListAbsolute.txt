@@ -327,3 +327,4 @@ C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymMana
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.MembersForm.resources
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.TrainersForm.resources
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.UserRegisterForm.resources
+C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.TrainerClassesForm.resources
