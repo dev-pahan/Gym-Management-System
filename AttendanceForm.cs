@@ -117,7 +117,7 @@ namespace GymManagementSystem
             {
                 var row = AttendanceList.Rows[e.RowIndex];
                 _selectedAttendanceId = int.Parse(row.Cells[0].Value.ToString());
-                MemberId.Text = row.Cells[1].Value.ToString();
+                MemberId.SelectedValue = row.Cells[1].Value;
                 Date.Value = DateTime.Parse(row.Cells[2].Value.ToString());
                 AttendanceStatus.Text = row.Cells[3].Value.ToString();
             }
