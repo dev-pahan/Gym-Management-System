@@ -132,6 +132,7 @@
             this.label14.Size = new System.Drawing.Size(112, 25);
             this.label14.TabIndex = 2;
             this.label14.Text = "Attendance";
+            this.label14.Click += new System.EventHandler(this.label14_Click_1);
             // 
             // pictureBox3
             // 

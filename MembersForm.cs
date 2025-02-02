@@ -161,5 +161,12 @@ namespace GymManagementSystem
             loginForm.Show();
             this.Hide();
         }
+
+        private void label14_Click_1(object sender, EventArgs e)
+        {
+            MembersForm MembersForm = new MembersForm();
+            MembersForm.Show();
+            this.Hide();
+        }
     }
 }

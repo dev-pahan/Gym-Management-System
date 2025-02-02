@@ -43,11 +43,7 @@ namespace GymManagementSystem.Controller
         //Add new user
         public bool RegisterUser(User user, out string errorMessage)
         {
-            // Validate password first
-            if (!IsPasswordValid(user.Password, out errorMessage))
-            {
-                return false; // Return false if password validation fails
-            }
+            
             try
             {
                 const string query = "INSERT INTO UsersTbl (Username, Password) VALUES (@Username, @Password)";
@@ -73,6 +69,9 @@ namespace GymManagementSystem.Controller
         // Error handling for password
         public bool IsPasswordValid(string password, out string errorMessage)
         {
+            // Debugging output
+            Console.WriteLine($"Validating password: '{password}'");
+
             if (string.IsNullOrWhiteSpace(password))
             {
                 errorMessage = "Password cannot be empty.";
