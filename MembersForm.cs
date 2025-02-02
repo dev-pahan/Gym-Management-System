@@ -120,13 +120,6 @@ namespace GymManagementSystem
 
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-            AttendanceForm attendanceForm = new AttendanceForm();
-            attendanceForm.Show();
-            this.Hide();
-        }
-
         private void ClearFields()
         {
             _selectedMemberId = 0;
@@ -159,6 +152,13 @@ namespace GymManagementSystem
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            AttendanceForm attendanceForm = new AttendanceForm();
+            attendanceForm.Show();
             this.Hide();
         }
     }

@@ -201,7 +201,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button RegisterBtn;
     }
 }

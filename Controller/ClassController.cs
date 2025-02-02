@@ -1,6 +1,7 @@
 ﻿using GymManagementSystem.Model;
 using System.Data.SQLite;
 using System.Data;
+using System;
 
 namespace GymManagementSystem.Controller
 {
@@ -25,41 +26,114 @@ namespace GymManagementSystem.Controller
             return _database.GetData(query);
         }
 
-        public void AddClass(Class gymClass)
+        public bool AddClass(Class gymClass, out string errorMessage)
         {
-            string query = "INSERT INTO ClassTbl (CName, CTime, CTrainer) VALUES (@CName, @CTime, @CTrainer)";
+            if (string.IsNullOrWhiteSpace(gymClass.CName))
+            {
+                errorMessage = "Class name is required.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CTime))
+            {
+                errorMessage = "Class time is required.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CTrainer))
+            {
+                errorMessage = "Trainer name is required.";
+                return false;
+            }
 
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@CName", gymClass.CName),
-                new SQLiteParameter("@CTime", gymClass.CTime),
-                new SQLiteParameter("@CTrainer", gymClass.CTrainer)
-            };
+            try
+            {
+                string query = "INSERT INTO ClassTbl (CName, CTime, CTrainer) VALUES (@CName, @CTime, @CTrainer)";
 
-            _database.ExecuteCommand(query, parameters);
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@CName", gymClass.CName),
+                    new SQLiteParameter("@CTime", gymClass.CTime),
+                    new SQLiteParameter("@CTrainer", gymClass.CTrainer)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Error adding class: {ex.Message}";
+                return false;
+            }
         }
 
-        public void UpdateClass(Class gymClass)
+        public bool UpdateClass(Class gymClass, out string errorMessage)
         {
-            string query = "UPDATE ClassTbl SET CName = @CName, CTime = @CTime, CTrainer = @CTrainer WHERE CId = @CId";
+            if (gymClass.CId <= 0)
+            {
+                errorMessage = "Invalid class ID.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CName))
+            {
+                errorMessage = "Class name is required.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CTime))
+            {
+                errorMessage = "Class time is required.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CTrainer))
+            {
+                errorMessage = "Trainer name is required.";
+                return false;
+            }
 
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@CId", gymClass.CId),
-                new SQLiteParameter("@CName", gymClass.CName),
-                new SQLiteParameter("@CTime", gymClass.CTime),
-                new SQLiteParameter("@CTrainer", gymClass.CTrainer)
-            };
+            try
+            {
+                string query = "UPDATE ClassTbl SET CName = @CName, CTime = @CTime, CTrainer = @CTrainer WHERE CId = @CId";
 
-            _database.ExecuteCommand(query, parameters);
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@CId", gymClass.CId),
+                    new SQLiteParameter("@CName", gymClass.CName),
+                    new SQLiteParameter("@CTime", gymClass.CTime),
+                    new SQLiteParameter("@CTrainer", gymClass.CTrainer)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Error updating class: {ex.Message}";
+                return false;
+            }
         }
 
-        public void DeleteClass(int classId)
+        public bool DeleteClass(int classId, out string errorMessage)
         {
-            string query = "DELETE FROM ClassTbl WHERE CId = @CId";
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@CId", classId)
-            };
+            if (classId <= 0)
+            {
+                errorMessage = "Invalid class ID.";
+                return false;
+            }
 
-            _database.ExecuteCommand(query, parameters);
+            try
+            {
+                string query = "DELETE FROM ClassTbl WHERE CId = @CId";
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@CId", classId)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Error deleting class: {ex.Message}";
+                return false;
+            }
         }
     }
 }

@@ -1,17 +1,24 @@
 ﻿using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class ClassesForm : Form
+    public partial class TrainerClassForm : Form
     {
         private readonly ClassController _classController;
         private readonly TrainerController _trainerController;
         private int _selectedClassId;
 
-        public ClassesForm()
+        public TrainerClassForm()
         {
             InitializeComponent();
             _classController = new ClassController();
@@ -51,17 +58,10 @@ namespace GymManagementSystem
                 CTrainer = CTrainerName.Text
             };
 
-            string errorMessage;
-            if (_classController.UpdateClass(classItem, out errorMessage))
-            {
-                MessageBox.Show("Class updated successfully!");
-                LoadClasses();
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show($"{errorMessage}");
-            }
+            _classController.UpdateClass(classItem);
+            MessageBox.Show("Class updated successfully!");
+            LoadClasses();
+            ClearFields();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -73,17 +73,10 @@ namespace GymManagementSystem
                 CTrainer = CTrainerName.Text
             };
 
-            string errorMessage;
-            if (_classController.AddClass(classItem, out errorMessage))
-            {
-                MessageBox.Show("Class added successfully!");
-                LoadClasses();
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show($"{errorMessage}");
-            }
+            _classController.AddClass(classItem);
+            MessageBox.Show("Class added successfully!");
+            LoadClasses();
+            ClearFields();
         }
 
 
@@ -95,18 +88,12 @@ namespace GymManagementSystem
                 return;
             }
 
-            string errorMessage;
-            if (_classController.DeleteClass(_selectedClassId, out errorMessage))
-            {
-                MessageBox.Show("Class deleted successfully!");
-                LoadClasses();
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show($"{errorMessage}");
-            }
+            _classController.DeleteClass(_selectedClassId);
+            MessageBox.Show("Class deleted successfully!");
+            LoadClasses();
+            ClearFields();
         }
+
 
         private void ClassesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -119,6 +106,7 @@ namespace GymManagementSystem
                 CTrainerName.Text = row.Cells[3].Value.ToString();
             }
         }
+
         private void ClearFields()
         {
             _selectedClassId = 0;
@@ -127,39 +115,10 @@ namespace GymManagementSystem
             CTrainerName.SelectedIndex = -1;
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TrainersForm trainersForm = new TrainersForm();
-            trainersForm.Show();
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MembersForm membersForm = new MembersForm();
-            membersForm.Show();
-            
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-            ClassesForm classForm = new ClassesForm();
-            classForm.Show();
-            this.Hide();
-        }
-
         private void label16_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-            this.Hide();
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-            AttendanceForm attendanceForm = new AttendanceForm();
-            attendanceForm.Show();
             this.Hide();
         }
     }
