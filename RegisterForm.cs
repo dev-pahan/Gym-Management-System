@@ -26,7 +26,6 @@ namespace GymManagementSystem
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
             var username = UsernameTb.Text.Trim();
-
             var password = PasswordTb.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -35,9 +34,10 @@ namespace GymManagementSystem
                 return;
             }
 
+            string errorMessage;
 
             //Check if username exists
-            if (_controller.DoesUsernameExist(username))
+            if (_controller.DoesUsernameExist(username, out errorMessage))
             {
                 MessageBox.Show("Username already exists. Please choose a different username.");
                 return;
@@ -54,7 +54,7 @@ namespace GymManagementSystem
             try
             {
                 //Register the user
-                string errorMessage;
+                
                 if (_controller.RegisterUser(user, out errorMessage))
                 {
                     MessageBox.Show("Registration successfull!");

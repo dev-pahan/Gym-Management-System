@@ -33,6 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.RegisterBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(63, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 19);
+            this.label1.Size = new System.Drawing.Size(271, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Gym Management System";
             // 
@@ -86,7 +87,7 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(385, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 23);
+            this.label2.Size = new System.Drawing.Size(208, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Login First";
             // 
@@ -95,7 +96,7 @@
             this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUsername.Location = new System.Drawing.Point(334, 318);
             this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(270, 27);
+            this.TxtUsername.Size = new System.Drawing.Size(270, 32);
             this.TxtUsername.TabIndex = 2;
             // 
             // label3
@@ -105,7 +106,7 @@
             this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(330, 294);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 1;
             this.label3.Text = "Username";
             // 
@@ -116,7 +117,7 @@
             this.label4.ForeColor = System.Drawing.Color.Teal;
             this.label4.Location = new System.Drawing.Point(330, 362);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 21);
+            this.label4.Size = new System.Drawing.Size(103, 23);
             this.label4.TabIndex = 1;
             this.label4.Text = "Password";
             // 
@@ -139,17 +140,31 @@
             this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPassword.Location = new System.Drawing.Point(334, 386);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(270, 27);
+            this.TxtPassword.Size = new System.Drawing.Size(270, 32);
             this.TxtPassword.TabIndex = 2;
             this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
-            
             // 
-            // Login
+            // RegisterBtn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.RegisterBtn.BackColor = System.Drawing.Color.MintCream;
+            this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterBtn.ForeColor = System.Drawing.Color.Teal;
+            this.RegisterBtn.Location = new System.Drawing.Point(334, 492);
+            this.RegisterBtn.Name = "RegisterBtn";
+            this.RegisterBtn.Size = new System.Drawing.Size(270, 44);
+            this.RegisterBtn.TabIndex = 4;
+            this.RegisterBtn.Text = "Create an account";
+            this.RegisterBtn.UseVisualStyleBackColor = false;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
+            // 
+            // LoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
@@ -187,5 +202,6 @@
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button RegisterBtn;
     }
 }

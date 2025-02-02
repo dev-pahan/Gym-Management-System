@@ -20,8 +20,15 @@ namespace GymManagementSystem.Controller
         }
 
         //Check if username exists
-        public bool DoesUsernameExist(string username)
+        public bool DoesUsernameExist(string username, out string errorMessage)
         {
+
+            // Validate username first
+            if (!IsUsernameValid(username, out errorMessage))
+            {
+                return false; // Return false if username validation fails
+            }
+
             const string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username";
             var parameters = new[]
             {
@@ -66,6 +73,12 @@ namespace GymManagementSystem.Controller
         // Error handling for password
         public bool IsPasswordValid(string password, out string errorMessage)
         {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                errorMessage = "Password cannot be empty.";
+                return false;
+            }
+
             if (password.Length < 8)
             {
                 errorMessage = "Password must be at least 8 characters long.";
@@ -93,6 +106,19 @@ namespace GymManagementSystem.Controller
             errorMessage = ""; // No errors
             return true;
          
+        }
+
+        // Error handling for username
+        public bool IsUsernameValid(string  username, out string errorMessage)
+        {
+            if (username.Contains(" "))
+            {
+                errorMessage = "Username cannot contain spaces. Please try again!"; 
+                return false;
+            }
+
+            errorMessage = ""; // No error
+            return true; // Username is valid
         }
     }
 }
