@@ -20,8 +20,8 @@ namespace GymManagementSystem
         {
             try
             {
-                UserRegisterForm registerForm = new UserRegisterForm();
-                registerForm.Show();
+                UserRegisterForm UserRegisterForm = new UserRegisterForm();
+                UserRegisterForm.Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -80,9 +80,7 @@ namespace GymManagementSystem
 
         private void label10_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
-            this.Hide();
+           
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
