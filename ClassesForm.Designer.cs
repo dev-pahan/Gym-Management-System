@@ -276,7 +276,7 @@
             // 
             // CNameTb
             // 
-            this.CNameTb.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
+            this.CNameTb.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.CNameTb.Location = new System.Drawing.Point(261, 462);
             this.CNameTb.Name = "CNameTb";
             this.CNameTb.Size = new System.Drawing.Size(192, 31);

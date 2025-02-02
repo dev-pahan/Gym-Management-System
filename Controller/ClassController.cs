@@ -28,19 +28,8 @@ namespace GymManagementSystem.Controller
 
         public bool AddClass(Class gymClass, out string errorMessage)
         {
-            if (string.IsNullOrWhiteSpace(gymClass.CName))
+            if (!AreAllFieldsFilled(gymClass, out errorMessage))
             {
-                errorMessage = "Class name is required.";
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(gymClass.CTime))
-            {
-                errorMessage = "Class time is required.";
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(gymClass.CTrainer))
-            {
-                errorMessage = "Trainer name is required.";
                 return false;
             }
 
@@ -60,8 +49,7 @@ namespace GymManagementSystem.Controller
             }
             catch (Exception ex)
             {
-                errorMessage = $"Error adding class: {ex.Message}";
-                return false;
+                return HandleDatabaseException(ex, out errorMessage);
             }
         }
 
@@ -72,19 +60,9 @@ namespace GymManagementSystem.Controller
                 errorMessage = "Invalid class ID.";
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(gymClass.CName))
+
+            if (!AreAllFieldsFilled(gymClass, out errorMessage))
             {
-                errorMessage = "Class name is required.";
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(gymClass.CTime))
-            {
-                errorMessage = "Class time is required.";
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(gymClass.CTrainer))
-            {
-                errorMessage = "Trainer name is required.";
                 return false;
             }
 
@@ -105,8 +83,7 @@ namespace GymManagementSystem.Controller
             }
             catch (Exception ex)
             {
-                errorMessage = $"Error updating class: {ex.Message}";
-                return false;
+                return HandleDatabaseException(ex, out errorMessage);
             }
         }
 
@@ -131,9 +108,36 @@ namespace GymManagementSystem.Controller
             }
             catch (Exception ex)
             {
-                errorMessage = $"Error deleting class: {ex.Message}";
+                return HandleDatabaseException(ex, out errorMessage);
+            }
+        }
+
+        private bool AreAllFieldsFilled(Class gymClass, out string errorMessage)
+        {
+            if (string.IsNullOrWhiteSpace(gymClass.CName))
+            {
+                errorMessage = "Class name is required.";
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(gymClass.CTime))
+            {
+                errorMessage = "Class time is required.";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(gymClass.CTrainer))
+            {
+                errorMessage = "Trainer name is required.";
+                return false;
+            }
+
+            errorMessage = string.Empty;
+            return true;
+        }
+
+        private bool HandleDatabaseException(Exception ex, out string errorMessage)
+        {
+            errorMessage = $"Database error: {ex.Message}";
+            return false;
         }
     }
 }
