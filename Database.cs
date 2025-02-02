@@ -9,21 +9,20 @@ using System.Threading.Tasks;
 
 namespace GymManagementSystem
 {
-    internal class Database 
+    internal class Database
     {
         public SQLiteConnection Connection { get; private set; }
         private SQLiteCommand Command;
         private SQLiteDataAdapter Adapter;
 
-
         public Database()
         {
-            // Use a relative path for the database
+            // Initialize the database connection using a relative path
             string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database", "gms.db");
             Connection = new SQLiteConnection($"Data Source={dbPath};Version=3;");
         }
 
-        // Method to open a connection
+        // Open the database connection if it is closed
         public void OpenConnection()
         {
             if (Connection.State == ConnectionState.Closed)
@@ -32,7 +31,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Method to close a connection
+        // Close the database connection if it is open
         public void CloseConnection()
         {
             if (Connection.State == ConnectionState.Open)
@@ -41,7 +40,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Method to fetch data
+        // Fetch data from the database using the provided query and parameters
         public DataTable GetData(string query, SQLiteParameter[] parameters = null)
         {
             DataTable dt = new DataTable();
@@ -61,7 +60,6 @@ namespace GymManagementSystem
                         Adapter.Fill(dt);
                     }
                 }
-                
             }
             catch (Exception ex)
             {
@@ -75,7 +73,7 @@ namespace GymManagementSystem
             return dt;
         }
 
-        // Method to execute a command
+        // Execute a command in the database using the provided query and parameters
         public int ExecuteCommand(string query, SQLiteParameter[] parameters = null)
         {
             int rowsAffected = 0;
@@ -91,7 +89,6 @@ namespace GymManagementSystem
                 }
 
                 rowsAffected = Command.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {

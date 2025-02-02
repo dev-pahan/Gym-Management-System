@@ -20,21 +20,23 @@ namespace GymManagementSystem
             LoadTrainerNames();
         }
 
+        // Load all classes into the ClassesList DataGridView
         private void LoadClasses()
         {
             ClassesList.DataSource = _classController.GetAllClasses();
         }
 
+        // Load all trainer names into the CTrainerName ComboBox
         private void LoadTrainerNames()
         {
             var trainers = _trainerController.GetAllTrainers();
             CTrainerName.DataSource = trainers;
             CTrainerName.DisplayMember = "TName";
             CTrainerName.ValueMember = "TName";
-
             CTrainerName.SelectedIndex = -1;
         }
 
+        // Edit an existing class
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -64,6 +66,7 @@ namespace GymManagementSystem
             }
         }
 
+        // Save a new class
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var classItem = new Class
@@ -86,7 +89,7 @@ namespace GymManagementSystem
             }
         }
 
-
+        // Delete a selected class
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -108,6 +111,7 @@ namespace GymManagementSystem
             }
         }
 
+        // Populate fields with selected class data
         private void ClassesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -119,6 +123,8 @@ namespace GymManagementSystem
                 CTrainerName.Text = row.Cells[3].Value.ToString();
             }
         }
+
+        // Clear all input fields
         private void ClearFields()
         {
             _selectedClassId = 0;
@@ -127,6 +133,7 @@ namespace GymManagementSystem
             CTrainerName.SelectedIndex = -1;
         }
 
+        // Navigate to TrainersForm
         private void label10_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -134,14 +141,15 @@ namespace GymManagementSystem
             trainersForm.Show();
         }
 
+        // Navigate to MembersForm
         private void label11_Click(object sender, EventArgs e)
         {
             this.Hide();
             MembersForm membersForm = new MembersForm();
             membersForm.Show();
-            
         }
 
+        // Navigate to ClassesForm
         private void label13_Click(object sender, EventArgs e)
         {
             ClassesForm classForm = new ClassesForm();
@@ -149,6 +157,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Navigate to LoginForm
         private void label16_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -156,6 +165,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Navigate to AttendanceForm
         private void label14_Click(object sender, EventArgs e)
         {
             AttendanceForm attendanceForm = new AttendanceForm();
@@ -164,3 +174,4 @@ namespace GymManagementSystem
         }
     }
 }
+

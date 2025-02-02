@@ -16,12 +16,14 @@ namespace GymManagementSystem.Controller
             _database = new Database();
         }
 
+        // Retrieve all trainers from the database
         public DataTable GetAllTrainers()
         {
             string query = "SELECT * FROM TrainersTbl";
             return _database.GetData(query);
         }
 
+        // Add a new trainer to the database
         public bool AddTrainer(Trainer trainer, out string errorMessage)
         {
             if (!AreAllFieldsFilled(trainer, out errorMessage))
@@ -52,6 +54,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Update an existing trainer in the database
         public bool UpdateTrainer(Trainer trainer, out string errorMessage)
         {
             if (trainer.Id <= 0)
@@ -89,6 +92,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Delete a trainer from the database
         public bool DeleteTrainer(int trainerId, out string errorMessage)
         {
             if (trainerId <= 0)
@@ -114,6 +118,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Validate that all required fields are filled
         private bool AreAllFieldsFilled(Trainer trainer, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(trainer.Name) ||
@@ -147,17 +152,20 @@ namespace GymManagementSystem.Controller
             return true;
         }
 
+        // Handle database exceptions
         private bool HandleDatabaseException(Exception ex, out string errorMessage)
         {
             errorMessage = $"Database error: {ex.Message}";
             return false;
         }
 
+        // Validate phone number format
         private bool IsValidPhoneNumber(string phoneNumber)
         {
             return phoneNumber.Length == 10 && phoneNumber.All(char.IsDigit);
         }
 
+        // Validate address format
         private bool IsValidAddress(string address)
         {
             if (string.IsNullOrWhiteSpace(address))
@@ -171,3 +179,4 @@ namespace GymManagementSystem.Controller
         }
     }
 }
+

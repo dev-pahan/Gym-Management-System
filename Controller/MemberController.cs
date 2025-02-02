@@ -14,12 +14,14 @@ namespace GymManagementSystem.Controller
             _database = new Database();
         }
 
+        // Retrieve all members from the database
         public DataTable GetAllMembers()
         {
             string query = "SELECT * FROM MembersTbl";
             return _database.GetData(query);
         }
 
+        // Add a new member to the database
         public bool AddMember(Member member, out string errorMessage)
         {
             if (!AreAllFieldsFilled(member, out errorMessage))
@@ -57,6 +59,7 @@ namespace GymManagementSystem.Controller
             return true;
         }
 
+        // Update an existing member in the database
         public void UpdateMember(Member member)
         {
             string query = "UPDATE MembersTbl SET " +
@@ -78,6 +81,7 @@ namespace GymManagementSystem.Controller
             _database.ExecuteCommand(query, parameters);
         }
 
+        // Delete a member from the database
         public void DeleteMember(int memberId)
         {
             string query = "DELETE FROM MembersTbl WHERE MId = @MId";
@@ -88,11 +92,13 @@ namespace GymManagementSystem.Controller
             _database.ExecuteCommand(query, parameters);
         }
 
+        // Validate phone number format
         private bool IsValidPhoneNumber(string phoneNumber)
         {
             return phoneNumber.Length == 10 && phoneNumber.All(char.IsDigit);
         }
 
+        // Validate address format
         private bool IsValidAddress(string address)
         {
             if (string.IsNullOrWhiteSpace(address))
@@ -104,6 +110,7 @@ namespace GymManagementSystem.Controller
             return true;
         }
 
+        // Validate that all required fields are filled
         private bool AreAllFieldsFilled(Member member, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(member.Name) ||
@@ -118,6 +125,6 @@ namespace GymManagementSystem.Controller
             errorMessage = string.Empty;
             return true;
         }
-
     }
 }
+

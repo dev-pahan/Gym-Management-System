@@ -14,18 +14,21 @@ namespace GymManagementSystem.Controller
             _database = new Database();
         }
 
+        // Retrieve all classes from the database
         public DataTable GetAllClasses()
         {
             string query = "SELECT * FROM ClassTbl";
             return _database.GetData(query);
         }
 
+        // Retrieve all trainers from the database
         public DataTable GetTrainers()
         {
             string query = "SELECT TName FROM TrainersTbl";
             return _database.GetData(query);
         }
 
+        // Add a new class to the database
         public bool AddClass(Class gymClass, out string errorMessage)
         {
             if (!AreAllFieldsFilled(gymClass, out errorMessage))
@@ -53,6 +56,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Update an existing class in the database
         public bool UpdateClass(Class gymClass, out string errorMessage)
         {
             if (gymClass.CId <= 0)
@@ -87,6 +91,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Delete a class from the database
         public bool DeleteClass(int classId, out string errorMessage)
         {
             if (classId <= 0)
@@ -112,6 +117,7 @@ namespace GymManagementSystem.Controller
             }
         }
 
+        // Validate that all required fields are filled
         private bool AreAllFieldsFilled(Class gymClass, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(gymClass.CName))
@@ -134,6 +140,7 @@ namespace GymManagementSystem.Controller
             return true;
         }
 
+        // Handle database exceptions
         private bool HandleDatabaseException(Exception ex, out string errorMessage)
         {
             errorMessage = $"Database error: {ex.Message}";
@@ -141,3 +148,4 @@ namespace GymManagementSystem.Controller
         }
     }
 }
+

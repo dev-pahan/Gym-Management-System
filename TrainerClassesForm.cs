@@ -1,13 +1,6 @@
 ﻿using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GymManagementSystem
@@ -27,11 +20,13 @@ namespace GymManagementSystem
             LoadTrainerNames();
         }
 
+        // Loads all classes into the ClassesList DataGridView
         private void LoadClasses()
         {
             ClassesList.DataSource = _classController.GetAllClasses();
         }
 
+        // Loads all trainer names into the CTrainerName ComboBox
         private void LoadTrainerNames()
         {
             var trainers = _trainerController.GetAllTrainers();
@@ -42,6 +37,7 @@ namespace GymManagementSystem
             CTrainerName.SelectedIndex = -1;
         }
 
+        // Handles the Edit button click event to update the selected class
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -71,6 +67,7 @@ namespace GymManagementSystem
             }
         }
 
+        // Handles the Save button click event to add a new class
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var classItem = new Class
@@ -93,7 +90,7 @@ namespace GymManagementSystem
             }
         }
 
-
+        // Handles the Delete button click event to delete the selected class
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -115,6 +112,7 @@ namespace GymManagementSystem
             }
         }
 
+        // Handles the cell content click event in the ClassesList DataGridView to populate the fields with the selected class data
         private void ClassesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -126,6 +124,8 @@ namespace GymManagementSystem
                 CTrainerName.Text = row.Cells[3].Value.ToString();
             }
         }
+
+        // Clears the input fields and resets the selected class ID
         private void ClearFields()
         {
             _selectedClassId = 0;
@@ -134,6 +134,7 @@ namespace GymManagementSystem
             CTrainerName.SelectedIndex = -1;
         }
 
+        // Handles the label click event to navigate to the login form
         private void label16_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
