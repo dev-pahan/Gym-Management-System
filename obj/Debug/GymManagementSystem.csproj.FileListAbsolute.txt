@@ -326,9 +326,7 @@ C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymMana
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.MembersForm.resources
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.TrainersForm.resources
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.UserRegisterForm.resources
-<<<<<<< HEAD
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.UserRegisterForm.resources
-=======
 C:\Users\PahanS\source\repos\dev-pahan\Gym-Management-System\obj\Debug\GymManagementSystem.TrainerClassesForm.resources
->>>>>>> d991893b1be8307afd3dd0d1bea43899e51cf43c
 C:\Users\umaim\OneDrive\Documents\GitHub\Gym-Management-System\obj\Debug\GymManagementSystem.TrainerClassesForm.resources
+cb76c1a362a4786ee175c1bb6ba8dca582951823
