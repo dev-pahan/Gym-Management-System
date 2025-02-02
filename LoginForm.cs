@@ -15,6 +15,7 @@ namespace GymManagementSystem
             _controller = new UserController();
         }
 
+        // Navigate to UserRegisterForm
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             try
@@ -29,6 +30,7 @@ namespace GymManagementSystem
             }
         }
 
+        // Handle user login
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             string username = LUsername.Text;
@@ -59,7 +61,7 @@ namespace GymManagementSystem
                     }
                     else if (user.Role == "Trainer")
                     {
-                        ClassesForm classesForm = new ClassesForm();
+                        TrainerClassesForm classesForm = new TrainerClassesForm();
                         classesForm.Show();
                     }
                     this.Hide();
