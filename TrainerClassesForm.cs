@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
-    public partial class ClassesForm : Form
+    public partial class TrainerClassesForm : Form
     {
         private readonly ClassController _classController;
         private readonly TrainerController _trainerController;
         private int _selectedClassId;
 
-        public ClassesForm()
+        public TrainerClassesForm()
         {
             InitializeComponent();
             _classController = new ClassController();
@@ -20,23 +20,24 @@ namespace GymManagementSystem
             LoadTrainerNames();
         }
 
-        // Load all classes into the ClassesList DataGridView
+        // Loads all classes into the ClassesList DataGridView
         private void LoadClasses()
         {
             ClassesList.DataSource = _classController.GetAllClasses();
         }
 
-        // Load all trainer names into the CTrainerName ComboBox
+        // Loads all trainer names into the CTrainerName ComboBox
         private void LoadTrainerNames()
         {
             var trainers = _trainerController.GetAllTrainers();
             CTrainerName.DataSource = trainers;
             CTrainerName.DisplayMember = "TName";
             CTrainerName.ValueMember = "TName";
+
             CTrainerName.SelectedIndex = -1;
         }
 
-        // Edit an existing class
+        // Handles the Edit button click event to update the selected class
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -66,7 +67,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Save a new class
+        // Handles the Save button click event to add a new class
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var classItem = new Class
@@ -89,7 +90,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Delete a selected class
+        // Handles the Delete button click event to delete the selected class
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (_selectedClassId == 0)
@@ -111,7 +112,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Populate fields with selected class data
+        // Handles the cell content click event in the ClassesList DataGridView to populate the fields with the selected class data
         private void ClassesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -124,7 +125,7 @@ namespace GymManagementSystem
             }
         }
 
-        // Clear all input fields
+        // Clears the input fields and resets the selected class ID
         private void ClearFields()
         {
             _selectedClassId = 0;
@@ -133,45 +134,12 @@ namespace GymManagementSystem
             CTrainerName.SelectedIndex = -1;
         }
 
-        // Navigate to TrainersForm
-        private void label10_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TrainersForm trainersForm = new TrainersForm();
-            trainersForm.Show();
-        }
-
-        // Navigate to MembersForm
-        private void label11_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MembersForm membersForm = new MembersForm();
-            membersForm.Show();
-        }
-
-        // Navigate to ClassesForm
-        private void label13_Click(object sender, EventArgs e)
-        {
-            ClassesForm classForm = new ClassesForm();
-            classForm.Show();
-            this.Hide();
-        }
-
-        // Navigate to LoginForm
+        // Handles the label click event to navigate to the login form
         private void label16_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
         }
-
-        // Navigate to AttendanceForm
-        private void label14_Click(object sender, EventArgs e)
-        {
-            AttendanceForm attendanceForm = new AttendanceForm();
-            attendanceForm.Show();
-            this.Hide();
-        }
     }
 }
-
