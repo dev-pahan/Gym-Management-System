@@ -18,11 +18,13 @@ namespace GymManagementSystem
             LoadMembers();
         }
 
+        // Load all attendance records into the AttendanceList DataGridView
         private void LoadAttendance()
         {
             AttendanceList.DataSource = _attendanceController.GetAllAttendance();
         }
 
+        // Load all members into the MemberId ComboBox
         private void LoadMembers()
         {
             var members = _attendanceController.GetMembers();
@@ -32,6 +34,7 @@ namespace GymManagementSystem
             MemberId.SelectedIndex = -1;
         }
 
+        // Navigate to TrainersForm
         private void label10_Click(object sender, EventArgs e)
         {
             TrainersForm trainersForm = new TrainersForm();
@@ -39,6 +42,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Navigate to MembersForm
         private void label11_Click(object sender, EventArgs e)
         {
             MembersForm membersForm = new MembersForm();
@@ -46,6 +50,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Navigate to ClassesForm
         private void label13_Click(object sender, EventArgs e)
         {
             ClassesForm classForm = new ClassesForm();
@@ -53,6 +58,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Navigate to LoginForm
         private void label16_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -60,6 +66,7 @@ namespace GymManagementSystem
             this.Hide();
         }
 
+        // Edit an existing attendance record
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (_selectedAttendanceId == 0)
@@ -82,6 +89,7 @@ namespace GymManagementSystem
             ClearFields();
         }
 
+        // Save a new attendance record
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var attendance = new Attendance
@@ -97,6 +105,7 @@ namespace GymManagementSystem
             ClearFields();
         }
 
+        // Delete a selected attendance record
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (_selectedAttendanceId == 0)
@@ -111,18 +120,20 @@ namespace GymManagementSystem
             ClearFields();
         }
 
+        // Populate fields with selected attendance data
         private void AttendanceList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 var row = AttendanceList.Rows[e.RowIndex];
                 _selectedAttendanceId = int.Parse(row.Cells[0].Value.ToString());
-                MemberId.Text = row.Cells[1].Value.ToString();
+                MemberId.SelectedValue = row.Cells[1].Value;
                 Date.Value = DateTime.Parse(row.Cells[2].Value.ToString());
                 AttendanceStatus.Text = row.Cells[3].Value.ToString();
             }
         }
 
+        // Clear all input fields
         private void ClearFields()
         {
             _selectedAttendanceId = 0;
@@ -131,3 +142,4 @@ namespace GymManagementSystem
         }
     }
 }
+

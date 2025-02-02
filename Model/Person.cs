@@ -39,7 +39,7 @@ namespace GymManagementSystem.Model
         //Method to validate DOB
         private bool IsValidDOB(DateTime dob)
         {
-            DateTime minAllowedDOB = new DateTime(2007, 1, 1);
+            DateTime minAllowedDOB = new DateTime(2006, 1, 1);
             return dob < minAllowedDOB;
         }
     }

@@ -28,11 +28,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtUsername = new System.Windows.Forms.TextBox();
+            this.LUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.LPassword = new System.Windows.Forms.TextBox();
+            this.RegisterBtn = new System.Windows.Forms.Button();
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -91,13 +93,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Login First";
             // 
-            // TxtUsername
+            // LUsername
             // 
-            this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.Location = new System.Drawing.Point(334, 318);
-            this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(270, 37);
-            this.TxtUsername.TabIndex = 2;
+
+            this.LUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUsername.Location = new System.Drawing.Point(334, 318);
+            this.LUsername.Name = "LUsername";
+            this.LUsername.Size = new System.Drawing.Size(270, 27);
+            this.LUsername.TabIndex = 2;
+
             // 
             // label3
             // 
@@ -135,24 +139,39 @@
             this.LoginBtn.UseVisualStyleBackColor = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // TxtPassword
+            // LPassword
             // 
-            this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(334, 386);
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(270, 37);
-            this.TxtPassword.TabIndex = 2;
-            this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+
+            this.LPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPassword.Location = new System.Drawing.Point(334, 386);
+            this.LPassword.Name = "LPassword";
+            this.LPassword.Size = new System.Drawing.Size(270, 27);
+            this.LPassword.TabIndex = 2;
+            // 
+            // RegisterBtn
+            // 
+            this.RegisterBtn.BackColor = System.Drawing.Color.MintCream;
+            this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterBtn.ForeColor = System.Drawing.Color.Teal;
+            this.RegisterBtn.Location = new System.Drawing.Point(334, 492);
+            this.RegisterBtn.Name = "RegisterBtn";
+            this.RegisterBtn.Size = new System.Drawing.Size(270, 44);
+            this.RegisterBtn.TabIndex = 4;
+            this.RegisterBtn.Text = "Create an account";
+            this.RegisterBtn.UseVisualStyleBackColor = false;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.TxtPassword);
-            this.Controls.Add(this.TxtUsername);
+            this.Controls.Add(this.LPassword);
+            this.Controls.Add(this.LUsername);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -182,11 +201,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtUsername;
+        private System.Windows.Forms.TextBox LUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox LPassword;
+        private System.Windows.Forms.Button RegisterBtn;
     }
 }

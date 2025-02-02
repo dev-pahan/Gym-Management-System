@@ -1,120 +1,82 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SQLite;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GymManagementSystem.Controller;
+using GymManagementSystem.Model;
 
 namespace GymManagementSystem
 {
     public partial class LoginForm : Form
     {
-        //Connection string to SQLite Database
-
-        private string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "database", "gms.db");
-        private string connectionString;
-        private Database Con;
+        private readonly UserController _controller;
 
         public LoginForm()
         {
             InitializeComponent();
-            connectionString = $"Data Source={dbPath};Version=3;";
-            Con = new Database();
+            _controller = new UserController();
         }
 
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
+        // Navigate to UserRegisterForm
+        private void RegisterBtn_Click(object sender, EventArgs e)
         {
-            TxtPassword.PasswordChar = '*';
+            try
+            {
+                UserRegisterForm registerForm = new UserRegisterForm();
+                registerForm.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // Handle user login
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string username = TxtUsername.Text.Trim();
-            string password = TxtPassword.Text;
+            string username = LUsername.Text;
+            string password = LPassword.Text;
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Please enter both username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username cannot be empty.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Hardcoded default username and password
-            /*if (username == "admin" && password == "admin")
+            if (string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Hide the login form and open the main dashboard
-                this.Hide();
-                Trainers dashboard = new Trainers();
-                dashboard.Show();
+                MessageBox.Show("Password cannot be empty.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             try
             {
-                using (SQLiteConnection con = new SQLiteConnection(connectionString))
+                User user = _controller.AuthenticateUser(username, password, out string errorMessage);
+
+                if (user != null)
                 {
-                    con.Open();
-                    string query = "SELECT COUNT(*) FROM UsersTbl WHERE Username = @Username";
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, con))
+                    if (user.Role == "Admin")
                     {
-                        cmd.Parameters.AddWithValue("@Username", username);
-                        object storedPassword = cmd.ExecuteScalar();
-
-                        /*if (storedPassword != null)
-                        {
-                            //Compare entered password with the stored hashed password
-                            if (VerifyPassword(password, storedPassword.ToString()))
-                            {
-                                MessageBox.Show("Login Successfill!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                //Hide the login form and open the main dashboard
-                                this.Hide();
-                                Trainers dashboard = new Trainers();
-                                dashboard.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }*/
-
-                        cmd.Parameters.AddWithValue("@Password", password);
-
-                        int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Hide the login form and open the main dashboard
-                            this.Hide();
-                            TrainersForm dashboard = new TrainersForm();
-                            dashboard.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        TrainersForm trainersForm = new TrainersForm();
+                        trainersForm.Show();
                     }
+                    else if (user.Role == "Trainer")
+                    {
+                        TrainerClassesForm classesForm = new TrainerClassesForm();
+                        classesForm.Show();
+                    }
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void label10_Click(object sender, EventArgs e)
         {
@@ -132,6 +94,7 @@ namespace GymManagementSystem
         {
 
         }
+
+  
     }
 }
-

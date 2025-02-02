@@ -7,7 +7,7 @@ namespace GymManagementSystem.Model
         public string Phone { get; set; }
         public string Address { get; set; }
         public string MembershipStatus { get; set; }
-        public string MClass { get; set; } // New Property for Member's Class
+        public string MClass { get; set; } 
 
         public Member() { }
 

@@ -16,16 +16,111 @@ namespace GymManagementSystem.Controller
             _database = new Database();
         }
 
+        // Retrieve all trainers from the database
         public DataTable GetAllTrainers()
         {
             string query = "SELECT * FROM TrainersTbl";
             return _database.GetData(query);
         }
 
+        // Add a new trainer to the database
         public bool AddTrainer(Trainer trainer, out string errorMessage)
         {
+            if (!AreAllFieldsFilled(trainer, out errorMessage))
+            {
+                return false;
+            }
 
-            // Check for empty fields
+            try
+            {
+                string query = "INSERT INTO TrainersTbl (TName, TGender, TDOB, TPhone, TAddress) " +
+                               "VALUES (@TName, @Gender, @DOB, @Phone, @Address)";
+
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@TName", trainer.Name),
+                    new SQLiteParameter("@Gender", trainer.Gender),
+                    new SQLiteParameter("@DOB", trainer.DateOfBirth),
+                    new SQLiteParameter("@Phone", trainer.Phone),
+                    new SQLiteParameter("@Address", trainer.Address)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return HandleDatabaseException(ex, out errorMessage);
+            }
+        }
+
+        // Update an existing trainer in the database
+        public bool UpdateTrainer(Trainer trainer, out string errorMessage)
+        {
+            if (trainer.Id <= 0)
+            {
+                errorMessage = "Invalid trainer ID.";
+                return false;
+            }
+
+            if (!AreAllFieldsFilled(trainer, out errorMessage))
+            {
+                return false;
+            }
+
+            try
+            {
+                string query = "UPDATE TrainersTbl SET TName = @TName, TGender = @Gender, TDOB = @DOB, TPhone = @Phone, " +
+                               "TAddress = @Address WHERE TId = @TId";
+
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@TId", trainer.Id),
+                    new SQLiteParameter("@TName", trainer.Name),
+                    new SQLiteParameter("@Gender", trainer.Gender),
+                    new SQLiteParameter("@DOB", trainer.DateOfBirth),
+                    new SQLiteParameter("@Phone", trainer.Phone),
+                    new SQLiteParameter("@Address", trainer.Address)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return HandleDatabaseException(ex, out errorMessage);
+            }
+        }
+
+        // Delete a trainer from the database
+        public bool DeleteTrainer(int trainerId, out string errorMessage)
+        {
+            if (trainerId <= 0)
+            {
+                errorMessage = "Invalid trainer ID.";
+                return false;
+            }
+
+            try
+            {
+                string query = "DELETE FROM TrainersTbl WHERE TId = @TId";
+                SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@TId", trainerId)
+                };
+
+                _database.ExecuteCommand(query, parameters);
+                errorMessage = string.Empty;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return HandleDatabaseException(ex, out errorMessage);
+            }
+        }
+
+        // Validate that all required fields are filled
+        private bool AreAllFieldsFilled(Trainer trainer, out string errorMessage)
+        {
             if (string.IsNullOrWhiteSpace(trainer.Name) ||
                 string.IsNullOrWhiteSpace(trainer.Gender) ||
                 string.IsNullOrWhiteSpace(trainer.Phone) ||
@@ -35,89 +130,53 @@ namespace GymManagementSystem.Controller
                 return false;
             }
 
-            // Validate phone number
-            if (!IsValidPhoneNumber (trainer.Phone))
+            if (!IsValidPhoneNumber(trainer.Phone))
             {
                 errorMessage = "Please enter a valid 10-digit phone number.";
                 return false;
             }
 
-            // Validate the date of birth (Trainer must be 18 or older)
             if (trainer.DateOfBirth > DateTime.Now.AddYears(-18))
             {
                 errorMessage = "Trainer must be at least 18 years old.";
                 return false;
             }
 
-            // Validate address
             if (!IsValidAddress(trainer.Address))
             {
-                errorMessage = "Please enter a valid address (5-100 characters, no special symbols)";
+                errorMessage = "Please enter a valid address (5-100 characters, no special symbols).";
                 return false;
             }
 
-            string query = "INSERT INTO TrainersTbl (TName, TGender, TDOB, TPhone, TAddress) " +
-                           "VALUES (@TName, @Gender, @DOB, @Phone, @Address)";
-
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@TName", trainer.Name),
-                new SQLiteParameter("@Gender", trainer.Gender),
-                new SQLiteParameter("@DOB", trainer.DateOfBirth),
-                new SQLiteParameter("@Phone", trainer.Phone),
-                new SQLiteParameter("@Address", trainer.Address),
-            };
-
-            //Exevute the command to insert the trainer into the database
-            _database.ExecuteCommand(query, parameters);
-
-            //Return success and clear the error message
             errorMessage = string.Empty;
             return true;
-
         }
 
-        public void UpdateTrainer(Trainer trainer)
+        // Handle database exceptions
+        private bool HandleDatabaseException(Exception ex, out string errorMessage)
         {
-            string query = "UPDATE TrainersTbl SET TName = @TName, TGender = @Gender, TDOB = @DOB, TPhone = @Phone, " +
-                           "TAddress = @Address WHERE TId = @TId";
-
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@TName", trainer.Name),
-                new SQLiteParameter("@Gender", trainer.Gender),
-                new SQLiteParameter("@DOB", trainer.DateOfBirth),
-                new SQLiteParameter("@Phone", trainer.Phone),
-                new SQLiteParameter("@Address", trainer.Address),
-                new SQLiteParameter("@TId", trainer.Id)
-            };
-
-            _database.ExecuteCommand(query, parameters);
+            errorMessage = $"Database error: {ex.Message}";
+            return false;
         }
 
-        public void DeleteTrainer(int trainerId)
-        {
-            string query = "DELETE FROM TrainersTbl WHERE TId = @TId";
-            SQLiteParameter[] parameters = {
-                new SQLiteParameter("@TId", trainerId)
-            };
-
-            _database.ExecuteCommand(query, parameters);
-        }
-
+        // Validate phone number format
         private bool IsValidPhoneNumber(string phoneNumber)
         {
             return phoneNumber.Length == 10 && phoneNumber.All(char.IsDigit);
-
         }
+
+        // Validate address format
         private bool IsValidAddress(string address)
         {
             if (string.IsNullOrWhiteSpace(address))
-                return false; // Address cannot be empty
+                return false;
             if (address.Length < 5 || address.Length > 100)
-                return false; // Address should be between 5 and 100 characters
+                return false;
             if (!System.Text.RegularExpressions.Regex.IsMatch(address, @"^[a-zA-Z0-9\s,.-]+$"))
-                return false; // Address can contain letters, numbers, spaces, commas, dots, and dashes
+                return false;
 
             return true;
         }
     }
 }
+
