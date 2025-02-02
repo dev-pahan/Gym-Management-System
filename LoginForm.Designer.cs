@@ -28,11 +28,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtUsername = new System.Windows.Forms.TextBox();
+            this.LUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.LPassword = new System.Windows.Forms.TextBox();
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(63, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 23);
+            this.label1.Size = new System.Drawing.Size(215, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Gym Management System";
             // 
@@ -87,17 +87,17 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(385, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 28);
+            this.label2.Size = new System.Drawing.Size(164, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Please Login First";
             // 
-            // TxtUsername
+            // LUsername
             // 
-            this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.Location = new System.Drawing.Point(334, 318);
-            this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(270, 32);
-            this.TxtUsername.TabIndex = 2;
+            this.LUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUsername.Location = new System.Drawing.Point(334, 318);
+            this.LUsername.Name = "LUsername";
+            this.LUsername.Size = new System.Drawing.Size(270, 27);
+            this.LUsername.TabIndex = 2;
             // 
             // label3
             // 
@@ -106,7 +106,7 @@
             this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(330, 294);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.Size = new System.Drawing.Size(88, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Username";
             // 
@@ -117,7 +117,7 @@
             this.label4.ForeColor = System.Drawing.Color.Teal;
             this.label4.Location = new System.Drawing.Point(330, 362);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 23);
+            this.label4.Size = new System.Drawing.Size(82, 21);
             this.label4.TabIndex = 1;
             this.label4.Text = "Password";
             // 
@@ -135,14 +135,13 @@
             this.LoginBtn.UseVisualStyleBackColor = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // TxtPassword
+            // LPassword
             // 
-            this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(334, 386);
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(270, 32);
-            this.TxtPassword.TabIndex = 2;
-            this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+            this.LPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPassword.Location = new System.Drawing.Point(334, 386);
+            this.LPassword.Name = "LPassword";
+            this.LPassword.Size = new System.Drawing.Size(270, 27);
+            this.LPassword.TabIndex = 2;
             // 
             // RegisterBtn
             // 
@@ -160,14 +159,14 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.TxtPassword);
-            this.Controls.Add(this.TxtUsername);
+            this.Controls.Add(this.LPassword);
+            this.Controls.Add(this.LUsername);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -196,12 +195,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtUsername;
+        private System.Windows.Forms.TextBox LUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox LPassword;
         private System.Windows.Forms.Button RegisterBtn;
     }
 }

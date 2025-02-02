@@ -15,7 +15,7 @@ namespace GymManagementSystem.Controller
 
         public DataTable GetAllAttendance()
         {
-            string query = "SELECT A.AId, M.MName, A.ADate, A.AStatus FROM AttendanceTbl A " +
+            string query = "SELECT M.MName, A.ADate, A.AStatus FROM AttendanceTbl A " +
                            "JOIN MembersTbl M ON A.MemberId = M.MId";
             return _database.GetData(query);
         }

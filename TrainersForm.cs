@@ -67,10 +67,16 @@ namespace GymManagementSystem
                 Address = AddressTb.Text,
             };
 
-            _trainercontroller.UpdateTrainer(trainer);
-            MessageBox.Show("Trainer updated successfully!");
-            LoadTrainers();
-            ClearFields();
+            if (_trainercontroller.UpdateTrainer(trainer, out string errorMessage))
+            {
+                MessageBox.Show("Trainer updated successfully!");
+                LoadTrainers();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -80,13 +86,17 @@ namespace GymManagementSystem
                 MessageBox.Show("Select a trainer to delete.");
                 return;
             }
-
- 
-            _trainercontroller.DeleteTrainer(_selectedTrainerId);
-
-            MessageBox.Show("Trainer deleted successfully!");
-            LoadTrainers();
-            ClearFields();
+            string errorMessage;
+            if (_trainercontroller.DeleteTrainer(_selectedTrainerId, out errorMessage))
+            {
+                MessageBox.Show("Trainer deleted successfully!");
+                LoadTrainers();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show($"{errorMessage}");
+            }
         }
 
         private void TrainersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
