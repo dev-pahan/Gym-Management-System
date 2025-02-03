@@ -87,7 +87,7 @@
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.TxtPassword.Location = new System.Drawing.Point(597, 643);
-            this.TxtPassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(447, 32);
             this.TxtPassword.TabIndex = 2;
@@ -163,6 +163,7 @@
             this.RPassword.Name = "RPassword";
             this.RPassword.Size = new System.Drawing.Size(270, 26);
             this.RPassword.TabIndex = 2;
+            this.RPassword.TextChanged += new System.EventHandler(this.RPassword_TextChanged);
             // 
             // RRole
             // 
@@ -172,7 +173,7 @@
             "Admin",
             "Trainer"});
             this.RRole.Location = new System.Drawing.Point(333, 502);
-            this.RRole.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RRole.Margin = new System.Windows.Forms.Padding(5);
             this.RRole.Name = "RRole";
             this.RRole.Size = new System.Drawing.Size(270, 28);
             this.RRole.TabIndex = 46;

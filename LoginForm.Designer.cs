@@ -143,6 +143,7 @@
             this.LPassword.Name = "LPassword";
             this.LPassword.Size = new System.Drawing.Size(270, 32);
             this.LPassword.TabIndex = 2;
+            this.LPassword.TextChanged += new System.EventHandler(this.LPassword_TextChanged);
             // 
             // RegisterBtn
             // 

@@ -60,5 +60,10 @@ namespace GymManagementSystem
         {
 
         }
+
+        private void RPassword_TextChanged(object sender, EventArgs e)
+        {
+            RPassword.PasswordChar = '*';
+        }
     }
 }

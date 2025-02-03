@@ -93,6 +93,9 @@ namespace GymManagementSystem
 
         }
 
-  
+        private void LPassword_TextChanged(object sender, EventArgs e)
+        {
+            LPassword.PasswordChar = '*';
+        }
     }
 }

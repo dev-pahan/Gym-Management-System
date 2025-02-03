@@ -85,6 +85,16 @@ namespace GymManagementSystem.Controller
                 errorMessage = "Role is required.";
                 return false;
             }
+            if (user.Username.Contains(" "))
+            {
+                errorMessage = "Username cannot contain spaces.";
+                return false;
+            }
+            if (user.Password.Contains(" "))
+            {
+                errorMessage = "Password cannot contain spaces.";
+                return false;
+            }
 
             errorMessage = string.Empty;
             return true;
