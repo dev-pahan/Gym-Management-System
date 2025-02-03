@@ -92,6 +92,12 @@ namespace GymManagementSystem
         // Save a new attendance record
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (MemberId.SelectedValue == null || Date.Value == null || AttendanceStatus.Text == null || _attendanceController == null)
+            {
+                MessageBox.Show("All the fields must be filled!");
+                return;
+            }
+
             var attendance = new Attendance
             {
                 MemberId = int.Parse(MemberId.SelectedValue.ToString()),

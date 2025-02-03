@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using GymManagementSystem.Controller;
+﻿using GymManagementSystem.Controller;
 using GymManagementSystem.Model;
+using System;
+using System.Windows.Forms;
 
 namespace GymManagementSystem
 {
@@ -20,8 +20,8 @@ namespace GymManagementSystem
         {
             try
             {
-                UserRegisterForm UserRegisterForm = new UserRegisterForm();
-                UserRegisterForm.Show();
+                UserRegisterForm userRegisterForm = new UserRegisterForm();
+                userRegisterForm.Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -77,22 +77,5 @@ namespace GymManagementSystem
             }
         }
 
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-  
     }
 }

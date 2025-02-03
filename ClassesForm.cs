@@ -136,17 +136,17 @@ namespace GymManagementSystem
         // Navigate to TrainersForm
         private void label10_Click(object sender, EventArgs e)
         {
-            this.Hide();
             TrainersForm trainersForm = new TrainersForm();
             trainersForm.Show();
+            this.Hide();
         }
 
         // Navigate to MembersForm
         private void label11_Click(object sender, EventArgs e)
         {
-            this.Hide();
             MembersForm membersForm = new MembersForm();
             membersForm.Show();
+            this.Hide();
         }
 
         // Navigate to ClassesForm
