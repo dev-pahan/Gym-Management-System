@@ -242,6 +242,8 @@
     <Compile Include="TrainersForm.Designer.cs">
       <DependentUpon>TrainersForm.cs</DependentUpon>
     </Compile>
+    <None Include="Icons\Back.png" />
+    <None Include="Icons\Backbutton.png" />
     <EmbeddedResource Include="AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
       <SubType>Designer</SubType>
