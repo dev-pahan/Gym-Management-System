@@ -135,8 +135,3 @@ Commit highlights/timeframe (selection):
 
 ## Tests
 - There are no automated tests included in the repository by default. Add unit tests for controller/database logic and integration tests for critical flows (authentication, CRUD).
-
-## License
-- No license file was included in the repository information provided. If you want an open-source license, consider adding a LICENSE file (e.g., MIT, Apache-2.0). Example: `MIT` if you want permissive licensing.
-
----
