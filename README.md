@@ -125,8 +125,6 @@ Commit highlights/timeframe (selection):
 - Jan 2–31, 2025: Authentication, registration, login, and error handling improvements including password hashing.
 - Feb 1–3, 2025: Finalizing error handling, register form fixes, merge conflict resolutions, attendance fixes.
 
-(You can expand this section with full commit/PR links or a CHANGELOG if desired.)
-
 ## Troubleshooting
 - If database connection fails: confirm gms.db path and check that the app has read/write permissions to the file location.
 - If login fails: verify UsersTbl content and that password hashing algorithm matches both register and login paths.
