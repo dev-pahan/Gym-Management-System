@@ -131,5 +131,3 @@ Commit highlights/timeframe (selection):
 - If UI elements are missing or fonts look wrong: confirm required assets are included and the correct font family is available.
 - For null reference exceptions: check that the calling code verifies selection of rows and that forms initialize all expected fields.
 
-## Tests
-- There are no automated tests included in the repository by default. Add unit tests for controller/database logic and integration tests for critical flows (authentication, CRUD).
